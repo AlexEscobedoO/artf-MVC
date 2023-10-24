@@ -1,0 +1,75 @@
+﻿@model artf_MVC.Models.Modrf
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Modrf</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numacuofmod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numacuofmod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Acumod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Acumod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fechamod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fechamod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Desmod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Desmod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Obsmod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Obsmod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fichatecmod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fichatecmod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Clavemod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Clavemod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdrectmodNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdrectmodNavigation.Idrect)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdusermodNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdusermodNavigation.Iduser)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Idmod" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,84 @@
+﻿@model artf_MVC.Models.Rectrf
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Nueva rectificación</h4>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Idinsrect" class="control-label"></label>
+                <select asp-for="Idinsrect" class ="form-control" asp-items="ViewBag.Idinsrect"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Iduserrect" class="control-label"></label>
+                <select asp-for="Iduserrect" class ="form-control" asp-items="ViewBag.Iduserrect"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numacuofrect" class="control-label"></label>
+                <input asp-for="Numacuofrect" class="form-control" />
+                <span asp-validation-for="Numacuofrect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fichatecrect" class="control-label"></label>
+                <input asp-for="Fichatecrect" class="form-control" />
+                <span asp-validation-for="Fichatecrect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numdocemp" class="control-label"></label>
+                <input asp-for="Numdocemp" class="form-control" />
+                <span asp-validation-for="Numdocemp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fechadocsol" class="control-label"></label>
+                <input asp-for="Fechadocsol" class="form-control" />
+                <span asp-validation-for="Fechadocsol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecharect" class="control-label"></label>
+                <input asp-for="Fecharect" class="form-control" />
+                <span asp-validation-for="Fecharect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desrect" class="control-label"></label>
+                <input asp-for="Desrect" class="form-control" />
+                <span asp-validation-for="Desrect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Obsrect" class="control-label"></label>
+                <input asp-for="Obsrect" class="form-control" />
+                <span asp-validation-for="Obsrect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Acurect" class="control-label"></label>
+                <input asp-for="Acurect" class="form-control" />
+                <span asp-validation-for="Acurect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Claverect" class="control-label"></label>
+                <input asp-for="Claverect" class="form-control" />
+                <span asp-validation-for="Claverect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fechamodrect" class="control-label"></label>
+                <input asp-for="Fechamodrect" class="form-control" />
+                <span asp-validation-for="Fechamodrect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

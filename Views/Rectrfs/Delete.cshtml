@@ -1,0 +1,89 @@
+﻿@model artf_MVC.Models.Rectrf
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>¿Deseas eliminar este registro?</h3>
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numacuofrect)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numacuofrect)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fichatecrect)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fichatecrect)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numdocemp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numdocemp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fechadocsol)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fechadocsol)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fecharect)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fecharect)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Desrect)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Desrect)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Obsrect)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Obsrect)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Acurect)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Acurect)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Claverect)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Claverect)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fechamodrect)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fechamodrect)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdinsrectNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdinsrectNavigation.Idins)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IduserrectNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IduserrectNavigation.Iduser)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Idrect" />
+        <input type="submit" value="Elminar" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
+    </form>
+</div>

@@ -1,0 +1,71 @@
+﻿@model artf_MVC.Models.Modrf
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Modrf</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Idrectmod" class="control-label"></label>
+                <select asp-for="Idrectmod" class ="form-control" asp-items="ViewBag.Idrectmod"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idusermod" class="control-label"></label>
+                <select asp-for="Idusermod" class ="form-control" asp-items="ViewBag.Idusermod"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numacuofmod" class="control-label"></label>
+                <input asp-for="Numacuofmod" class="form-control" />
+                <span asp-validation-for="Numacuofmod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Acumod" class="control-label"></label>
+                <input asp-for="Acumod" class="form-control" />
+                <span asp-validation-for="Acumod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fechamod" class="control-label"></label>
+                <input asp-for="Fechamod" class="form-control" />
+                <span asp-validation-for="Fechamod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desmod" class="control-label"></label>
+                <input asp-for="Desmod" class="form-control" />
+                <span asp-validation-for="Desmod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Obsmod" class="control-label"></label>
+                <input asp-for="Obsmod" class="form-control" />
+                <span asp-validation-for="Obsmod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fichatecmod" class="control-label"></label>
+                <input asp-for="Fichatecmod" class="form-control" />
+                <span asp-validation-for="Fichatecmod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clavemod" class="control-label"></label>
+                <input asp-for="Clavemod" class="form-control" />
+                <span asp-validation-for="Clavemod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

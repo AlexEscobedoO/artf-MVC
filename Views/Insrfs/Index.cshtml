@@ -1,0 +1,71 @@
+﻿@model IEnumerable<artf_MVC.Models.Insrf>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Inscripción de solicitud</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Registro nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Numacuofins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Obsins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecapins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Docins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdempinsNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdsolinsNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IduserinsNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numacuofins)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Obsins)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecapins)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Docins)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdempinsNavigation.Idempre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdsolinsNavigation.Idsol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IduserinsNavigation.Iduser)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Idins">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Idins">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Idins">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

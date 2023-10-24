@@ -1,0 +1,42 @@
+﻿@model IEnumerable<artf_MVC.Models.Fabricante>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Fabricantes</h1>
+
+<p>
+        <a asp-action="Create" class="btn btn-success">Registro nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rsfab)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marfab)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rsfab)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marfab)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-default btn-sm" asp-route-id="@item.Idfab">Editar</a> 
+                <a asp-action="Details" class="btn btn-danger btn-sm" asp-route-id="@item.Idfab">Detalles</a> 
+                <a asp-action="Delete" class="btn btn-primary btn-sm" asp-route-id="@item.Idfab">Elminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

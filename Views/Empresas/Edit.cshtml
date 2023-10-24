@@ -1,0 +1,48 @@
+﻿@model artf_MVC.Models.Empresa
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4>Editar Empresa</h4>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Idempre" />
+            <div class="form-group">
+                <label asp-for="Rsempre" class="control-label"></label>
+                <input asp-for="Rsempre" class="form-control" />
+                <span asp-validation-for="Rsempre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dirempre" class="control-label"></label>
+                <input asp-for="Dirempre" class="form-control" />
+                <span asp-validation-for="Dirempre" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                    <label asp-for="Tipoempre" class="control-label">Tipo de Empresa</label>
+                    <select asp-for="Tipoempre" class="form-control">
+                        <option value="asignatario">Asignatario</option>
+                        <option value="particular">Particular</option>
+                        <option value="concesionario">Concesionario</option>
+                        <option value="permisionario">Permisionario</option>
+                    </select>
+                    <span asp-validation-for="Tipoempre" class="text-danger"></span>
+                </div>
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - artf_MVC</title>
+    <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+    <style>
+        .container-body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse sub-navbar navbar-fixed-top">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ARTF</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subenlaces">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="subenlaces">
+                    <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Conseciones y Permisos<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Conseciones</a></li>
+                                    <li><a href="#">Permisos</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Equipo Ferroviario<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Solrfs" asp-action="Index">Solicitud</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Insrfs" asp-action="Index">Inscripcion</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Rectrfs" asp-action="Index">Rectificacion</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Modrfs" asp-action="Index">Modificacion</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Canrfs" asp-action="Index">Cancelacion</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Equiunis" asp-action="Index">Equipo</a></li>
+                                </ul>
+                            </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Catalogos <span class="caret"></span></a>
+                             <ul class="dropdown-menu" role="menu">
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Empresas" asp-action="Index">Empresas</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Fabricantes" asp-action="Index">Fabricantes</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Modeloes" asp-action="Index">Modelos</a></li>
+                             </ul>
+                        </li>
+                        @*<li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+                        </li>*@
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class='container' style=' text-align: justify;'>
+    <div class="container-body">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+</div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - ARTF - <a asp-area="" asp-controller="Home" asp-action="Privacy">Aviso de Privacidad</a>
+        </div>
+    </footer>
+    <script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

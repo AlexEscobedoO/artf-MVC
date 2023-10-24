@@ -1,0 +1,59 @@
+﻿@model artf_MVC.Models.Solrf
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class='container' style=' text-align: justify;'>
+
+<h4>Editar solicitud</h4>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Idsol" />
+            <div class="form-group">
+                <label asp-for="Idempsol" class="control-label"></label>
+                <select asp-for="Idempsol" class="form-control" asp-items="ViewBag.Idempsol"></select>
+                <span asp-validation-for="Idempsol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idusersol" class="control-label"></label>
+                <select asp-for="Idusersol" class="form-control" asp-items="ViewBag.Idusersol"></select>
+                <span asp-validation-for="Idusersol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numacuofsol" class="control-label"></label>
+                <input asp-for="Numacuofsol" class="form-control" />
+                <span asp-validation-for="Numacuofsol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Obssol" class="control-label"></label>
+                <input asp-for="Obssol" class="form-control" />
+                <span asp-validation-for="Obssol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecapsol" class="control-label"></label>
+                <input asp-for="Fecapsol" class="form-control" />
+                <span asp-validation-for="Fecapsol" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                    <label asp-for="Docsol" class="control-label"></label>
+                    <input type="file" asp-for="Docsol" class="form-control" />
+                    <span asp-validation-for="Docsol" class="text-danger"></span>
+                </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+        <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

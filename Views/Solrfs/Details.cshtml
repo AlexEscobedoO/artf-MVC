@@ -1,0 +1,68 @@
+﻿@model artf_MVC.Models.Solrf
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class='container' style=' text-align: justify;'>
+<div>
+    <h4>Detalles de la solicitud</h4>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numacuofsol)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numacuofsol)
+        </dd>
+        </dl>
+        <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Obssol)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Obssol)
+        </dd>
+        </dl>
+        <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fecapsol)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fecapsol)
+        </dd>
+        </dl>
+        <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Docsol)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Docsol)
+        </dd>
+        </dl>
+        <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdempsolNavigation)
+        </dt>
+        </dl>
+
+        <dl class="row">
+            <dt class="col-sm-2">
+            @Html.DisplayFor(model => model.IdempsolNavigation.Idempre)
+            </dt>
+        </dl>
+
+        <dl class="row">
+            <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdusersolNavigation)
+            </dt>
+        </dl>
+
+        <dl class="row">
+            <dt class="col-sm-2">
+            @Html.DisplayFor(model => model.IdusersolNavigation.Iduser)
+            </dt>
+        </dl>
+</div>
+<div>
+        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model?.Idsol">Edit</a>
+        <a asp-action="Index" class="btn btn-info">Back to List</a>
+</div>

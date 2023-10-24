@@ -1,0 +1,38 @@
+﻿@model artf_MVC.Models.Empresa
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Detalles de la Empresa</h4>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rsempre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rsempre)
+        </dd>
+    </dl>
+     <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dirempre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dirempre)
+        </dd>
+        </dl>
+     <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tipoempre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tipoempre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model?.Idempre">Editar</a>
+    <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
+</div>
+

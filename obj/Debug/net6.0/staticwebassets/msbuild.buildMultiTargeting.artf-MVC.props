@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\artf-MVC.props" />
+</Project>

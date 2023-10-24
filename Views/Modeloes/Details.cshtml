@@ -1,0 +1,21 @@
+﻿@model artf_MVC.Models.Modelo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Detalles del modelo</h4>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Modequi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Modequi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model?.Idmod">Editar</a> 
+    <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
+</div>

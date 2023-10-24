@@ -1,0 +1,31 @@
+﻿@model artf_MVC.Models.Fabricante
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>¿Deseas eliminar este registro?</h3>
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rsfab)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rsfab)
+        </dd>
+    </dl>
+    <dl class="row">
+       <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Marfab)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Marfab)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Idfab" />
+        <input type="submit" value="Elminar" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
+    </form>
+</div>
