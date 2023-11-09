@@ -48,7 +48,7 @@ namespace artf_MVC.Controllers
         // GET: Solrfs/Create
         public IActionResult Create()
         {
-            ViewData["Idempsol"] = new SelectList(_context.Empresas, "Idempre", "Idempre");
+            ViewData["Idempsol"] = new SelectList(_context.Empresas, "Idempre", "Rsempre");
             ViewData["Idusersol"] = new SelectList(_context.Users, "Iduser", "Iduser");
             return View();
         }
@@ -57,8 +57,8 @@ namespace artf_MVC.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Idsol,Idempsol,Idusersol,Numacuofsol,Obssol,Fecapsol,Docsol")] Solrf solrf)
+        [ValidateAntiForgeryToken] 
+        public async Task<IActionResult> Create([Bind("Idsol, IdempsolNavigation, Idempsol,Idusersol,Numacuofsol,Obssol,Fecapsol,Docsol")] Solrf solrf)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace artf_MVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Idempsol"] = new SelectList(_context.Empresas, "Idempre", "Idempre", solrf.Idempsol);
+            ViewData["Idempsol"] = new SelectList(_context.Empresas, "Idempre", "Rsempre", solrf.Idempsol);
             ViewData["Idusersol"] = new SelectList(_context.Users, "Iduser", "Iduser", solrf.Idusersol);
             return View(solrf);
         }
@@ -84,7 +84,7 @@ namespace artf_MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["Idempsol"] = new SelectList(_context.Empresas, "Idempre", "Idempre", solrf.Idempsol);
+            ViewData["Idempsol"] = new SelectList(_context.Empresas, "Idempre", "Rsempre", solrf.Idempsol);
             ViewData["Idusersol"] = new SelectList(_context.Users, "Iduser", "Iduser", solrf.Idusersol);
             return View(solrf);
         }
@@ -121,7 +121,7 @@ namespace artf_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Idempsol"] = new SelectList(_context.Empresas, "Idempre", "Idempre", solrf.Idempsol);
+            ViewData["Idempsol"] = new SelectList(_context.Empresas, "Idempre", "Rsempre", solrf.Idempsol);
             ViewData["Idusersol"] = new SelectList(_context.Users, "Iduser", "Iduser", solrf.Idusersol);
             return View(solrf);
         }

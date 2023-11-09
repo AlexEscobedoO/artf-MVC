@@ -40,29 +40,22 @@
         </dl>
         <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdempsolNavigation)
+            @Html.DisplayNameFor(model => model.IdempsolNavigation.Rsempre)
         </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdempsolNavigation.Rsempre)
+        </dd>
         </dl>
-
-        <dl class="row">
-            <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.IdempsolNavigation.Idempre)
-            </dt>
-        </dl>
-
-        <dl class="row">
-            <dt class="col-sm-2">
+@*         <dl class="row">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.IdusersolNavigation)
-            </dt>
-        </dl>
-
-        <dl class="row">
-            <dt class="col-sm-2">
-            @Html.DisplayFor(model => model.IdusersolNavigation.Iduser)
-            </dt>
-        </dl>
+        </dt>
+        <dd class="col-sm-10">
+             @Html.DisplayFor(model => model.IdusersolNavigation.Iduser)
+        </dd>
+        </dl> *@
 </div>
 <div>
-        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model?.Idsol">Edit</a>
-        <a asp-action="Index" class="btn btn-info">Back to List</a>
+@*         <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model?.Idsol">Editar</a>
+ *@        <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
 </div>

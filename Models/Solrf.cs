@@ -7,7 +7,7 @@ namespace artf_MVC.Models;
 public partial class Solrf
 {
     public int Idsol { get; set; }
-
+    [Display(Name = "Nombre de la Empresa")]
     public int? Idempsol { get; set; }
 
     public int? Idusersol { get; set; }

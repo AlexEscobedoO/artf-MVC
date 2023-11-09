@@ -14,8 +14,8 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Idempsol" class="control-label"></label>
-                <select asp-for="Idempsol" class ="form-control" asp-items="ViewBag.Idempsol"></select>
-            </div>
+                <select asp-for="Idempsol" class="form-control" asp-items="ViewBag.Idempsol"></select>
+             </div>
             @*<div class="form-group">
                 <label asp-for="Idusersol" class="control-label"></label>
                 <select asp-for="Idusersol" class ="form-control" asp-items="ViewBag.Idusersol"></select>
@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Obssol" class="control-label"></label>
-                <input asp-for="Obssol" class="form-control" />
+                <textarea asp-for="Obssol" class="form-control" rows="5" maxlength="200"></textarea>
                 <span asp-validation-for="Obssol" class="text-danger"></span>
             </div>
             <div class="form-group">
