@@ -4,57 +4,67 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Insrf</h4>
-    <hr />
+<div class='container' style=' text-align: justify;'>
+    <div>
+    <h4>Detalles de la inscripción</h4>
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Numacuofins)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Numacuofins)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Obsins)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Obsins)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fecapins)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fecapins)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Docins)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Docins)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdempinsNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdempinsNavigation.Idempre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdsolinsNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdsolinsNavigation.Idsol)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IduserinsNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IduserinsNavigation.Iduser)
-        </dd>
     </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Obsins)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Obsins)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Fecapins)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Fecapins)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Docins)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Docins)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdempinsNavigation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdempinsNavigation.Rsempre)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdsolinsNavigation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdsolinsNavigation.Idsol)
+            </dd>
+        </dl>
+       @*  <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IduserinsNavigation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IduserinsNavigation.Iduser)
+            </dd>
+        </dl> *@
+</div>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Idins">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
 </div>

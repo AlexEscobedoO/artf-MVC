@@ -49,7 +49,7 @@ namespace artf_MVC.Controllers
         // GET: Insrfs/Create
         public IActionResult Create()
         {
-            ViewData["Idempins"] = new SelectList(_context.Empresas, "Idempre", "Idempre");
+            ViewData["Idempins"] = new SelectList(_context.Empresas, "Idempre", "Rsempre");
             ViewData["Idsolins"] = new SelectList(_context.Solrves, "Idsol", "Idsol");
             ViewData["Iduserins"] = new SelectList(_context.Users, "Iduser", "Iduser");
             return View();
@@ -87,7 +87,7 @@ namespace artf_MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["Idempins"] = new SelectList(_context.Empresas, "Idempre", "Idempre", insrf.Idempins);
+            ViewData["Idempins"] = new SelectList(_context.Empresas, "Idempre", "Rsempre", insrf.Idempins);
             ViewData["Idsolins"] = new SelectList(_context.Solrves, "Idsol", "Idsol", insrf.Idsolins);
             ViewData["Iduserins"] = new SelectList(_context.Users, "Iduser", "Iduser", insrf.Iduserins);
             return View(insrf);

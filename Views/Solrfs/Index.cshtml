@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                    @Html.DisplayNameFor(model => model.Idsol)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Numacuofsol)
             </th>
             <th>
@@ -37,6 +40,9 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(Model => item.Idsol)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Numacuofsol)
             </td>
             <td>
@@ -49,7 +55,7 @@
                 @Html.DisplayFor(modelItem => item.Docsol)
             </td>
             <td>
-                        @Html.DisplayFor(modelItem => item.IdempsolNavigation.Rsempre)
+                @Html.DisplayFor(modelItem => item.IdempsolNavigation.Rsempre)
             </td>
 @*             <td>
                         @Html.DisplayFor(modelItem => item.IdusersolNavigation.Nomuser)
