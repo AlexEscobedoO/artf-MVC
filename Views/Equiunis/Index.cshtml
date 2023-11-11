@@ -9,189 +9,194 @@
 <p>
         <a asp-action="Create" class="btn btn-success">Registro nuevo</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Modaequi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tipequi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Combuequi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pequi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nserie)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Regiequi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Graequi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Usoequi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fcons)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nofact)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tcontra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fcontra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Vcontra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mrent)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Monrent)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Obsarre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Obsgra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Obsequi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fichaequi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fecharequi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdcanequiNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdempreequiNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdfabequiNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdinsequiNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdmodeequiNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdmodequiNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdrectequiNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdsolequiNavigation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modaequi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipequi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Combuequi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pequi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nserie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Regiequi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Graequi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usoequi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fcons)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nofact)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tcontra)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fcontra)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Vcontra)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mrent)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Monrent)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Obsarre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Obsgra)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Obsequi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fichaequi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecharequi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdcanequiNavigation.Idcan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdempreequiNavigation.Idempre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdfabequiNavigation.Idfab)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdinsequiNavigation.Idins)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdmodeequiNavigation.Idmod)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdmodequiNavigation.Idmod)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdrectequiNavigation.Idrect)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdsolequiNavigation.Idsol)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Idequi">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Idequi">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Idequi">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div style="height: 500px; overflow-y: auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Modaequi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tipequi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Combuequi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pequi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nserie)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Regiequi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Graequi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Usoequi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fcons)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nofact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tcontra)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fcontra)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vcontra)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mrent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Monrent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Obsarre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Obsgra)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Obsequi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fichaequi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecharequi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdcanequiNavigation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdempreequiNavigation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdfabequiNavigation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdinsequiNavigation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdmodeequiNavigation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdmodequiNavigation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdrectequiNavigation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdsolequiNavigation)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modaequi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipequi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Combuequi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pequi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nserie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Regiequi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Graequi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Usoequi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fcons)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nofact)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tcontra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fcontra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vcontra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mrent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Monrent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Obsarre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Obsgra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Obsequi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fichaequi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecharequi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdcanequiNavigation.Idcan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdempreequiNavigation.Idempre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdfabequiNavigation.Idfab)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdinsequiNavigation.Idins)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdmodeequiNavigation.Idmod)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdmodequiNavigation.Idmod)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdrectequiNavigation.Idrect)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdsolequiNavigation.Idsol)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Idequi">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Idequi">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Idequi">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>
