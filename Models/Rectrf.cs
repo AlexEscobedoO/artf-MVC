@@ -6,10 +6,10 @@ namespace artf_MVC.Models;
 
 public partial class Rectrf
 {
-    [Display(Name = "Folio de rectificación")]
+    [Display(Name = "Folio rectificación")]
     public int Idrect { get; set; }
 
-    [Display(Name = "Folio de la inscripción")]
+    [Display(Name = "Folio inscripción")]
     public int? Idinsrect { get; set; }
 
     [Display(Name = "Id usuario")]
@@ -47,7 +47,7 @@ public partial class Rectrf
 
     public virtual ICollection<Equiuni> Equiunis { get; set; } = new List<Equiuni>();
 
-    [Display(Name = "Folio de la inscripción")]
+    [Display(Name = "Folio inscripción")]
     public virtual Insrf? IdinsrectNavigation { get; set; }
 
     [Display(Name = "Id usuario")]

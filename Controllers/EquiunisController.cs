@@ -55,10 +55,10 @@ namespace artf_MVC.Controllers
         public IActionResult Create()
         {
             ViewData["Idcanequi"] = new SelectList(_context.Canrves, "Idcan", "Idcan");
-            ViewData["Idempreequi"] = new SelectList(_context.Empresas, "Idempre", "Idempre");
-            ViewData["Idfabequi"] = new SelectList(_context.Fabricantes, "Idfab", "Idfab");
+            ViewData["Idempreequi"] = new SelectList(_context.Empresas, "Idempre", "Rsempre");
+            ViewData["Idfabequi"] = new SelectList(_context.Fabricantes, "Idfab", "Rsfab");
             ViewData["Idinsequi"] = new SelectList(_context.Insrves, "Idins", "Idins");
-            ViewData["Idmodeequi"] = new SelectList(_context.Modelos, "Idmod", "Idmod");
+            ViewData["Idmodeequi"] = new SelectList(_context.Modelos, "Idmod", "Modequi");
             ViewData["Idmodequi"] = new SelectList(_context.Modrves, "Idmod", "Idmod");
             ViewData["Idrectequi"] = new SelectList(_context.Rectrves, "Idrect", "Idrect");
             ViewData["Idsolequi"] = new SelectList(_context.Solrves, "Idsol", "Idsol");
@@ -70,7 +70,7 @@ namespace artf_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Idequi,Idempreequi,Idfabequi,Idmodeequi,Idsolequi,Idinsequi,Idrectequi,Idmodequi,Idcanequi,Modaequi,Tipequi,Combuequi,Pequi,Nserie,Regiequi,Graequi,Usoequi,Fcons,Nofact,Tcontra,Fcontra,Vcontra,Mrent,Monrent,Obsarre,Obsgra,Obsequi,Fichaequi,Fecharequi")] Equiuni equiuni)
+        public async Task<IActionResult> Create([Bind("Idequi,Idempreequi,Idfabequi,Idmodeequi,Idsolequi,Idinsequi,Idrectequi,Idmodequi,Idcanequi,Modaequi,Tipequi,Combuequi,Pequi,Nserie,Regiequi,Graequi,Usoequi,Fcons,Nofact,Tcontra,Fcontra,Vcontra,Mrent,Monrent,Obsarre,Obsgra,Obsequi,Fichaequi,Fecharequi")] Equiuni equiuni, IFormFile Fichaequi)
         {
             if (ModelState.IsValid)
             {
@@ -103,10 +103,10 @@ namespace artf_MVC.Controllers
                 return NotFound();
             }
             ViewData["Idcanequi"] = new SelectList(_context.Canrves, "Idcan", "Idcan", equiuni.Idcanequi);
-            ViewData["Idempreequi"] = new SelectList(_context.Empresas, "Idempre", "Idempre", equiuni.Idempreequi);
-            ViewData["Idfabequi"] = new SelectList(_context.Fabricantes, "Idfab", "Idfab", equiuni.Idfabequi);
+            ViewData["Idempreequi"] = new SelectList(_context.Empresas, "Idempre", "Rsempre", equiuni.Idempreequi);
+            ViewData["Idfabequi"] = new SelectList(_context.Fabricantes, "Idfab", "Rsfab", equiuni.Idfabequi);
             ViewData["Idinsequi"] = new SelectList(_context.Insrves, "Idins", "Idins", equiuni.Idinsequi);
-            ViewData["Idmodeequi"] = new SelectList(_context.Modelos, "Idmod", "Idmod", equiuni.Idmodeequi);
+            ViewData["Idmodeequi"] = new SelectList(_context.Modelos, "Idmod", "Modequi", equiuni.Idmodeequi);
             ViewData["Idmodequi"] = new SelectList(_context.Modrves, "Idmod", "Idmod", equiuni.Idmodequi);
             ViewData["Idrectequi"] = new SelectList(_context.Rectrves, "Idrect", "Idrect", equiuni.Idrectequi);
             ViewData["Idsolequi"] = new SelectList(_context.Solrves, "Idsol", "Idsol", equiuni.Idsolequi);

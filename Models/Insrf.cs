@@ -6,11 +6,11 @@ namespace artf_MVC.Models;
 
 public partial class Insrf
 {
-    [Display(Name = "Folio de la inscripción")]
+    [Display(Name = "Folio inscripción")]
     public int Idins { get; set; }
     [Display(Name = "Nombre de la empresa")]
     public int? Idempins { get; set; }
-    [Display(Name = "Folio de la solicitud")]
+    [Display(Name = "Folio solicitud")]
     public int? Idsolins { get; set; }
 
     public int? Iduserins { get; set; }
@@ -32,7 +32,7 @@ public partial class Insrf
     [Display(Name = "Empresa")]
     public virtual Empresa? IdempinsNavigation { get; set; }
 
-    [Display(Name = "Folio de la solicitud")]
+    [Display(Name = "Folio solicitud")]
     public virtual Solrf? IdsolinsNavigation { get; set; }
 
     [Display(Name = "Usuario")]

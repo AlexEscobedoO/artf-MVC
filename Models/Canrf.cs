@@ -7,7 +7,7 @@ namespace artf_MVC.Models;
 
 public partial class Canrf
 {
-    [Display(Name = "Folio de cancelación")]
+    [Display(Name = "Folio cancelación")]
     public int Idcan { get; set; }
 
     [Display(Name = "Folio Modificación")]

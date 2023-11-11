@@ -3,10 +3,7 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Edit</h1>
-
-<h4>Equiuni</h4>
+<h4>Editar equipo</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -55,18 +52,37 @@
             </div>
             <div class="form-group">
                 <label asp-for="Modaequi" class="control-label"></label>
-                <input asp-for="Modaequi" class="form-control" />
-                <span asp-validation-for="Modaequi" class="text-danger"></span>
+                <select asp-for="Modaequi" class="form-control">
+                    <option value="Arrastre">Arrastre</option>
+                    <option value="Tractivo">Tractivo</option>
+                    <option value="Trabajo">Trabajo</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Tipequi" class="control-label"></label>
-                <input asp-for="Tipequi" class="form-control" />
-                <span asp-validation-for="Tipequi" class="text-danger"></span>
+                <select asp-for="Tipequi" class="form-control">
+                    <option value="Coche">Coche</option>
+                    <option value="domo/comedor">domo/comedor</option>
+                    <option value="Coche terraza">Coche terraza</option>
+                    <option value="Coche bar">Coche bar</option>
+                    <option value="Furgon">Furgon</option>
+                    <option value="Gondola">Gondola</option>
+                    <option value="Plataforma">Plataforma</option>
+                    <option value="S169">S169</option>
+                    <option value="Tolva">Tolva</option>
+                    <option value="Locomotora">Locomotora</option>
+                    <option value="Locomotora-AC">Locomotora-AC</option>
+                    <option value="Locomotora-DC">Locomotora-DC</option>
+                    <option value="Locomotora-EVO">Locomotora-EVO</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Combuequi" class="control-label"></label>
-                <input asp-for="Combuequi" class="form-control" />
-                <span asp-validation-for="Combuequi" class="text-danger"></span>
+                <select asp-for="Combuequi" class="form-control">
+                    <option value="Diesel">Diesel</option>
+                    <option value="Gasolina">Gasolina</option>
+                    <option value="Electrico">Electrico</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Pequi" class="control-label"></label>
@@ -75,23 +91,31 @@
             </div>
             <div class="form-group">
                 <label asp-for="Nserie" class="control-label"></label>
-                <input asp-for="Nserie" class="form-control" />
+                <input asp-for="Nserie" class="form-control" maxlength="50"/>
                 <span asp-validation-for="Nserie" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Regiequi" class="control-label"></label>
-                <input asp-for="Regiequi" class="form-control" />
-                <span asp-validation-for="Regiequi" class="text-danger"></span>
+                <select asp-for="Regiequi" class="form-control">
+                    <option value="Arrendado">Arrendado</option>
+                    <option value="Propio">Propio</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Graequi" class="control-label"></label>
-                <input asp-for="Graequi" class="form-control" />
-                <span asp-validation-for="Graequi" class="text-danger"></span>
+                <select asp-for="Graequi" class="form-control">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Usoequi" class="control-label"></label>
-                <input asp-for="Usoequi" class="form-control" />
-                <span asp-validation-for="Usoequi" class="text-danger"></span>
+                <select asp-for="Usoequi" class="form-control">
+                    <option value="Carga">Carga</option>
+                    <option value="Pasajeros">Pasajeros</option>
+                    <option value="Patio">Patio</option>
+                    <option value="Mixto">Mixto</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Fcons" class="control-label"></label>
@@ -100,12 +124,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Nofact" class="control-label"></label>
-                <input asp-for="Nofact" class="form-control" />
+                <input asp-for="Nofact" class="form-control" maxlength="50" />
                 <span asp-validation-for="Nofact" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Tcontra" class="control-label"></label>
-                <input asp-for="Tcontra" class="form-control" />
+                <input asp-for="Tcontra" class="form-control"  maxlength="50"/>
                 <span asp-validation-for="Tcontra" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -115,7 +139,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Vcontra" class="control-label"></label>
-                <input asp-for="Vcontra" class="form-control" />
+                <input asp-for="Vcontra" class="form-control" maxlength="30" />
                 <span asp-validation-for="Vcontra" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -125,27 +149,29 @@
             </div>
             <div class="form-group">
                 <label asp-for="Monrent" class="control-label"></label>
-                <input asp-for="Monrent" class="form-control" />
-                <span asp-validation-for="Monrent" class="text-danger"></span>
+                <select asp-for="Monrent" class="form-control">
+                    <option value="MXN">MXN</option>
+                    <option value="USD">USD</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Obsarre" class="control-label"></label>
-                <input asp-for="Obsarre" class="form-control" />
+                <textarea asp-for="Obsarre" class="form-control" rows="5" maxlength="200"></textarea>
                 <span asp-validation-for="Obsarre" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Obsgra" class="control-label"></label>
-                <input asp-for="Obsgra" class="form-control" />
+                <textarea asp-for="Obsgra" class="form-control" rows="5" maxlength="200"></textarea>
                 <span asp-validation-for="Obsgra" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Obsequi" class="control-label"></label>
-                <input asp-for="Obsequi" class="form-control" />
+                <textarea asp-for="Obsequi" class="form-control" rows="5" maxlength="200"></textarea>
                 <span asp-validation-for="Obsequi" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Fichaequi" class="control-label"></label>
-                <input asp-for="Fichaequi" class="form-control" />
+                <input type="file" asp-for="Fichaequi" class="form-control" />
                 <span asp-validation-for="Fichaequi" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -154,14 +180,14 @@
                 <span asp-validation-for="Fecharequi" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
 </div>
 
 @section Scripts {

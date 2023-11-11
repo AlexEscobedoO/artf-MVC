@@ -14,6 +14,9 @@
         <thead>
             <tr>
                 <th>
+                    @Html.DisplayNameFor(model => model.Idequi)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Modaequi)
                 </th>
                 <th>
@@ -105,6 +108,9 @@
             {
                 <tr>
                     <td>
+                        @Html.DisplayFor(modelItem => item.Idequi)
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Modaequi)
                     </td>
                     <td>
@@ -168,16 +174,16 @@
                         @Html.DisplayFor(modelItem => item.IdcanequiNavigation.Idcan)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.IdempreequiNavigation.Idempre)
+                        @Html.DisplayFor(modelItem => item.IdempreequiNavigation.Rsempre)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.IdfabequiNavigation.Idfab)
+                        @Html.DisplayFor(modelItem => item.IdfabequiNavigation.Rsfab)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.IdinsequiNavigation.Idins)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.IdmodeequiNavigation.Idmod)
+                        @Html.DisplayFor(modelItem => item.IdmodeequiNavigation.Modequi)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.IdmodequiNavigation.Idmod)
@@ -189,9 +195,9 @@
                         @Html.DisplayFor(modelItem => item.IdsolequiNavigation.Idsol)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Idequi">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Idequi">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Idequi">Delete</a>
+                        <a asp-action="Edit" class="btn btn-default btn-sm" asp-route-id="@item.Idequi">Editar</a>
+                        <a asp-action="Details" class="btn btn-danger btn-sm" asp-route-id="@item.Idequi">Detalles</a>
+                        <a asp-action="Delete" class="btn btn-primary btn-sm" asp-route-id="@item.Idequi">Eliminar</a>
                     </td>
                 </tr>
             }

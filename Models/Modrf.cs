@@ -7,9 +7,9 @@ namespace artf_MVC.Models;
 
 public partial class Modrf
 {
-    [Display(Name = "Folio de la modificación")]
+    [Display(Name = "Folio modificación")]
     public int Idmod { get; set; }
-    [Display(Name = "Folio de la rectificación")]
+    [Display(Name = "Folio rectificación")]
     public int? Idrectmod { get; set; }
 
     public int? Idusermod { get; set; }
