@@ -3,10 +3,7 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Edit</h1>
-
-<h4>Canrf</h4>
+<h4>Editar cancelación</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,14 +15,14 @@
                 <select asp-for="Idmodcan" class="form-control" asp-items="ViewBag.Idmodcan"></select>
                 <span asp-validation-for="Idmodcan" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="Idusercan" class="control-label"></label>
                 <select asp-for="Idusercan" class="form-control" asp-items="ViewBag.Idusercan"></select>
                 <span asp-validation-for="Idusercan" class="text-danger"></span>
-            </div>
+            </div> *@
             <div class="form-group">
                 <label asp-for="Numacuofcan" class="control-label"></label>
-                <input asp-for="Numacuofcan" class="form-control" />
+                <input asp-for="Numacuofcan" class="form-control" maxlength="30"/>
                 <span asp-validation-for="Numacuofcan" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -35,22 +32,22 @@
             </div>
             <div class="form-group">
                 <label asp-for="Juscan" class="control-label"></label>
-                <input asp-for="Juscan" class="form-control" />
+                <textarea asp-for="Juscan" class="form-control" rows="5" maxlength="200"></textarea>
                 <span asp-validation-for="Juscan" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Obscan" class="control-label"></label>
-                <input asp-for="Obscan" class="form-control" />
+                <textarea asp-for="Obscan" class="form-control" rows="5" maxlength="200"></textarea>
                 <span asp-validation-for="Obscan" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Fichacan" class="control-label"></label>
-                <input asp-for="Fichacan" class="form-control" />
+                <input type="file" asp-for="Fichacan" class="form-control" />
                 <span asp-validation-for="Fichacan" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Clavecan" class="control-label"></label>
-                <input asp-for="Clavecan" class="form-control" />
+                <input asp-for="Clavecan" class="form-control" maxlength="100"/>
                 <span asp-validation-for="Clavecan" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -59,14 +56,14 @@
                 <span asp-validation-for="Fechacan" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
 </div>
 
 @section Scripts {

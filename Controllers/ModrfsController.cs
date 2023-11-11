@@ -58,8 +58,17 @@ namespace artf_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Idmod,Idrectmod,Idusermod,Numacuofmod,Acumod,Fechamod,Desmod,Obsmod,Fichatecmod,Clavemod")] Modrf modrf)
+        public async Task<IActionResult> Create([Bind("Idmod,Idrectmod,Idusermod,Numacuofmod,Acumod,Fechamod,Desmod,Obsmod,Fichatecmod,Clavemod")] Modrf modrf ,IFormFile fichatecmod)
         {
+             //if (fichatecmod != null && fichatecmod.Length > 0)
+             //{
+             //   using (var memoryStream = new MemoryStream())
+             //   {
+             //       await fichatecmod.CopyToAsync(memoryStream);
+             //       modrf.Fichatecmod = memoryStream.ToArray();
+             //   }
+             //}            
+            
             if (ModelState.IsValid)
             {
                 _context.Add(modrf);

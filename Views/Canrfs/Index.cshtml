@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Idcan)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Numacuofcan)
             </th>
             <th>
@@ -36,15 +39,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.IdmodcanNavigation)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.IdusercanNavigation)
-            </th>
+            </th> *@
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idcan)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Numacuofcan)
             </td>
@@ -69,12 +75,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.IdmodcanNavigation.Idmod)
             </td>
-            <td>
+          @*   <td>
                 @Html.DisplayFor(modelItem => item.IdusercanNavigation.Iduser)
-            </td>
+            </td> *@
             <td>
-                <a asp-action="Edit" class="btn btn-default btn-sm" asp-route-id="@item.Idcan">Editar</a> |
-                <a asp-action="Details" class="btn btn-danger btn-sm" asp-route-id="@item.Idcan">Detalles</a> |
+                <a asp-action="Edit" class="btn btn-default btn-sm" asp-route-id="@item.Idcan">Editar</a>
+                <a asp-action="Details" class="btn btn-danger btn-sm" asp-route-id="@item.Idcan">Detalles</a>
                 <a asp-action="Delete" class="btn btn-primary btn-sm" asp-route-id="@item.Idcan">Eliminar</a>
             </td>
         </tr>

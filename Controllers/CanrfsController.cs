@@ -58,7 +58,7 @@ namespace artf_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Idcan,Idmodcan,Idusercan,Numacuofcan,Fechaofcan,Juscan,Obscan,Fichacan,Clavecan,Fechacan")] Canrf canrf)
+        public async Task<IActionResult> Create([Bind("Idcan,Idmodcan,Idusercan,Numacuofcan,Fechaofcan,Juscan,Obscan,Fichacan,Clavecan,Fechacan")] Canrf canrf, IFormFile Fichacan)
         {
             if (ModelState.IsValid)
             {

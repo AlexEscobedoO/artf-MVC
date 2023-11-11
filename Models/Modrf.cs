@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace artf_MVC.Models;
 
 public partial class Modrf
 {
+    [Display(Name = "Folio de la modificación")]
     public int Idmod { get; set; }
-
+    [Display(Name = "Folio de la rectificación")]
     public int? Idrectmod { get; set; }
 
     public int? Idusermod { get; set; }
@@ -28,7 +30,7 @@ public partial class Modrf
     public string Obsmod { get; set; } = null!;
 
     [Display(Name = "Ficha técnica de modificación")]
-    public byte[] Fichatecmod { get; set; } = null!;
+    public byte[] Fichatecmod { get; set; } =  ObtenerValorPredeterminado(); //null!;
 
     [Display(Name = "Clave de modificación")]
     public string Clavemod { get; set; } = null!;
@@ -37,9 +39,14 @@ public partial class Modrf
 
     public virtual ICollection<Equiuni> Equiunis { get; set; } = new List<Equiuni>();
 
-    [Display(Name = "Id-Rectificación")]
+    [Display(Name = "Folio Rectificación")]
     public virtual Rectrf? IdrectmodNavigation { get; set; }
 
     [Display(Name = "Id-Usuario")]
     public virtual User? IdusermodNavigation { get; set; }
+    private static byte[] ObtenerValorPredeterminado()
+    {
+        // Lógica para obtener el valor predeterminado
+        return Encoding.UTF8.GetBytes("Default");
+    }
 }

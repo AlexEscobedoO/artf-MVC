@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace artf_MVC.Models;
 
 public partial class Canrf
 {
+    [Display(Name = "Folio de cancelación")]
     public int Idcan { get; set; }
 
-    [Display(Name = "Id Modificación")]
+    [Display(Name = "Folio Modificación")]
     public int? Idmodcan { get; set; }
 
     [Display(Name = "Id Usuario")]
@@ -27,7 +29,7 @@ public partial class Canrf
     public string? Obscan { get; set; }
 
     [Display(Name = "Ficha de cancelación")]
-    public byte[] Fichacan { get; set; } = null!;
+    public byte[] Fichacan { get; set; } = ObtenerValorPredeterminado();//null!;
 
     [Display(Name = "Clave de cancelación")]
     public string Clavecan { get; set; } = null!;
@@ -37,9 +39,14 @@ public partial class Canrf
 
     public virtual ICollection<Equiuni> Equiunis { get; set; } = new List<Equiuni>();
 
-    [Display(Name = "Id Modificación")]
+    [Display(Name = "Folio modificación")]
     public virtual Modrf? IdmodcanNavigation { get; set; }
 
     [Display(Name = "Id Usuario")]
     public virtual User? IdusercanNavigation { get; set; }
+    private static byte[] ObtenerValorPredeterminado()
+    {
+        // Lógica para obtener el valor predeterminado
+        return Encoding.UTF8.GetBytes("Default");
+    }
 }
