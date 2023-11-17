@@ -201,7 +201,7 @@ create table if not exists permisoins(
 )engine=InnoDB;
 
 
-CREATE TABLE permisomod (
+CREATE TABLE if not exists permisomod (
     IDPERMOD INT PRIMARY KEY AUTO_INCREMENT,
     idpermiempre int, 
     idpermodins int,
@@ -241,11 +241,11 @@ CREATE TABLE permisomod (
     HOMOINS VARCHAR(150),
     FECHAINSC DATE,
     FOREIGN KEY (idpermiempre) REFERENCES empresa(idempre),
-    FOREIGN KEY (idpermodins) REFERENCES permisoins(idnis)
+    FOREIGN KEY (idpermodins) REFERENCES permisoins(IDPERINS)
 
 )engine=InnoDB;
 
-CREATE TABLE PERMRECT (
+CREATE TABLE if not exists PERMRECT (
     idpermrect INT PRIMARY KEY AUTO_INCREMENT,
     idpermirectmod int,
     NUMPER VARCHAR(50),
@@ -283,12 +283,11 @@ CREATE TABLE PERMRECT (
     DOMICILIO INT,
     HOMOCLAVE_INSCRIPCION INT,
     FECHA_INSCRIPCION DATE,
-    FOREIGN KEY (idpermiempre) REFERENCES empresa(idempre),
-    FOREIGN KEY (idperectmod) REFERENCES permisomod (IDPERMOD)
+    FOREIGN KEY (idpermirectmod) REFERENCES permisomod (IDPERMOD)
 
 )engine=InnoDB;
 
-CREATE TABLE permican (
+CREATE TABLE if not exists permican (
     IDPER INT PRIMARY KEY AUTO_INCREMENT,
     idpermiempre int,
     idpermicanmod int,
@@ -327,7 +326,7 @@ CREATE TABLE permican (
     
 );
 
-CREATE TABLE `estados` (
+CREATE TABLE  if not exists `estados` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `estado` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
@@ -4960,7 +4959,7 @@ INSERT INTO `municipios` (`id`, `municipio`) VALUES
 (2092, 'Villa Aldama'),
 (2093, 'Tlacolulan'),
 (2094, 'Tonayán'),
-(2095, 'Coacoatzintla');
+(2095, 'Coacoatzintla'),
 (2096, 'Jilotepec'),
 (2097, 'Naolinco'),
 (2098, 'Miahuatlán'),
