@@ -58,7 +58,7 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Docins)
-                    </td>
+                    </td>   
                     <td>
                         @Html.DisplayFor(modelItem => item.IdempinsNavigation.Rsempre)
                     </td>
@@ -69,9 +69,12 @@
                 @Html.DisplayFor(modelItem => item.IduserinsNavigation.Iduser)
                 </td> *@
                     <td>
-                        <a asp-action="Edit" class="btn btn-default btn-sm" asp-route-id="@item.Idins">Editar</a>
-                        <a asp-action="Details" class="btn btn-danger btn-sm" asp-route-id="@item.Idins">Detalles</a>
-                        <a asp-action="Delete" class="btn btn-primary btn-sm" asp-route-id="@item.Idins">Eliminar</a>
+                         <div class="btn-group-vertical">
+                            <a asp-action="Edit" class="btn btn-default btn-sm" asp-route-id="@item.Idins">Editar</a>
+                            <a asp-action="Details" class="btn btn-danger btn-sm" asp-route-id="@item.Idins">Detalles</a>
+                            <a asp-action="Delete" class="btn btn-primary btn-sm" asp-route-id="@item.Idins">Eliminar</a>
+                            <a asp-action="GenerateConsistency" class="btn btn-success btn-sm" asp-route-id="@item.Idins">Generar Constancia</a>
+                        </div>
                     </td>
                 </tr>
             }

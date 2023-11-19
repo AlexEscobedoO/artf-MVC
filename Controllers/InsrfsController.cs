@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using artf_MVC.Models;
+using artf_MVC.Helper.Constancias;
 
 namespace artf_MVC.Controllers
 {
@@ -170,6 +171,42 @@ namespace artf_MVC.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> GenerateConsistency(int? id)
+        {
+            if (id == null || _context.Insrves == null)
+            {
+                return NotFound();
+            }
+
+            var insrf = await _context.Insrves
+                .Include(i => i.IdempinsNavigation)
+                .Include(i => i.IdsolinsNavigation)
+                .Include(i => i.IduserinsNavigation)
+                .FirstOrDefaultAsync(m => m.Idins == id);
+
+            if (insrf == null)
+            {
+                return NotFound();
+            }
+
+            ConstanciaInscripcion constanciaInscripcion = new ConstanciaInscripcion();
+            var result = constanciaInscripcion.Generar(insrf);
+
+            // Verificar si el resultado es de tipo FileContentResult o FileStreamResult
+            if (result is FileContentResult fileContentResult)
+            {
+                // Puedes realizar acciones adicionales si es necesario
+            }
+            else if (result is FileStreamResult fileStreamResult)
+            {
+                // Puedes realizar acciones adicionales si es necesario
+            }
+            return result;
+        }
+
+
+
 
         private bool InsrfExists(int id)
         {
