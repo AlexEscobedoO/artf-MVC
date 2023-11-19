@@ -313,7 +313,7 @@ namespace artf_MVC.Helper.Constancias
                 textCell2.Border = Rectangle.NO_BORDER; // Quital el borde
                 innerTable2.AddCell(textCell2);
                 // Agregar el rectángulo gris a la derecha
-                PdfPCell rectangleCell2 = new PdfPCell(new Phrase("X", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED }));
+                PdfPCell rectangleCell2 = new PdfPCell(new Phrase("X", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK }));
                 rectangleCell2.BackgroundColor = new BaseColor(192, 192, 192); // Fondo gris
                 rectangleCell2.FixedHeight = 12f; // Ajustar la altura según sea necesario
                 rectangleCell2.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar el texto
@@ -634,7 +634,7 @@ namespace artf_MVC.Helper.Constancias
                 subTable4.AddCell(rectangleCellB);
 
                 // Tercer rectángulo con texto "TRABAJO"
-                PdfPCell rectangleCellC = new PdfPCell(new Phrase("NO", new Font(Font.FontFamily.HELVETICA, 7f) { Color = BaseColor.RED }));
+                PdfPCell rectangleCellC = new PdfPCell(new Phrase("NO", new Font(Font.FontFamily.HELVETICA, 7f) { Color = BaseColor.BLACK }));
                 rectangleCellC.BackgroundColor = new BaseColor(192, 192, 192); // Fondo GRIS
                 rectangleCellC.Colspan = 1; // Ajusta según sea necesario
                 rectangleCellC.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar el texto
@@ -715,7 +715,7 @@ namespace artf_MVC.Helper.Constancias
                 textCell3.Border = Rectangle.NO_BORDER; // Quital el borde
                 innerTable3.AddCell(textCell3);
                 // Agregar el rectángulo gris a la derecha
-                PdfPCell rectangleCell3 = new PdfPCell(new Phrase("X", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED }));
+                PdfPCell rectangleCell3 = new PdfPCell(new Phrase("X", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK }));
                 rectangleCell3.BackgroundColor = new BaseColor(192, 192, 192);  // Color gris
                 rectangleCell3.FixedHeight = 12f; // Ajustar la altura según sea necesario
                 rectangleCell3.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar el texto
@@ -766,11 +766,11 @@ namespace artf_MVC.Helper.Constancias
                 cell.HorizontalAlignment = Element.ALIGN_LEFT;
 
 
-                cell.Phrase = new Phrase("Contrato", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED });
+                cell.Phrase = new Phrase("Contrato", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK });
                 subTable.AddCell(cell);
 
 
-                Chunk textChuckValorContrato = new Chunk("De Arrendamiento", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED });
+                Chunk textChuckValorContrato = new Chunk("De Arrendamiento", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK });
                 LineSeparator line = new LineSeparator(0.5f, 100, BaseColor.BLACK, Element.ALIGN_LEFT, -2);
 
                 Phrase phraseValorContrato = new Phrase();
@@ -780,11 +780,11 @@ namespace artf_MVC.Helper.Constancias
                 subTable.AddCell(cell);
 
 
-                cell.Phrase = new Phrase("Fecha Contrato:", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED });
+                cell.Phrase = new Phrase("Fecha Contrato:", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK });
                 subTable.AddCell(cell);
                 // Puedes agregar más celdas si es necesario
 
-                Chunk textChuckValorFecha = new Chunk("28 de marzo de 2023", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED });
+                Chunk textChuckValorFecha = new Chunk("28 de marzo de 2023", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK });
                 Phrase phraseValorFecha = new Phrase();
                 phraseValorFecha.Add(textChuckValorFecha);
                 phraseValorFecha.Add(line);
@@ -891,10 +891,10 @@ namespace artf_MVC.Helper.Constancias
                 cell.PaddingBottom = 5f;
                 cell.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
 
-                cell.Phrase = new Phrase("Descripción:", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED });
+                cell.Phrase = new Phrase("Descripción:", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK });
                 subTable.AddCell(cell);
 
-                Chunk textChuck = new Chunk("Una vez realizado el análisis íntegro del ESCRITO, así como de los anexos que lo acompañan, y toda vez que los mismos cumplen con los requisitos señalados en el artículo 77 del Reglamento del Servicio Ferroviario (RSF) y en el trámite ARTF-02-004, esta Agencia determina que el trámite de Asignación de Matrícula de las veintisiete (27) unidades de Equipo Tractivo solicitadas, resulta procedente, por lo que se tiene a bien asignar las siguientes matrículas a las veintisiete (27) unidades de equipo tractivo solicitadas y se procede a su inscripción en el RFM", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED });
+                Chunk textChuck = new Chunk("Una vez realizado el análisis íntegro del ESCRITO, así como de los anexos que lo acompañan, y toda vez que los mismos cumplen con los requisitos señalados en el artículo 77 del Reglamento del Servicio Ferroviario (RSF) y en el trámite ARTF-02-004, esta Agencia determina que el trámite de Asignación de Matrícula de las veintisiete (27) unidades de Equipo Tractivo solicitadas, resulta procedente, por lo que se tiene a bien asignar las siguientes matrículas a las veintisiete (27) unidades de equipo tractivo solicitadas y se procede a su inscripción en el RFM", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK });
                 LineSeparator line = new LineSeparator(0.5f, 100, BaseColor.BLACK, Element.ALIGN_LEFT, -2);
 
                 Phrase phrase = new Phrase();
@@ -964,10 +964,10 @@ namespace artf_MVC.Helper.Constancias
                 cell.PaddingBottom = 5f;
                 cell.HorizontalAlignment = Element.ALIGN_LEFT;
 
-                cell.Phrase = new Phrase("No. de Oficio:", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED });
+                cell.Phrase = new Phrase("No. de Oficio:", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK });
                 subTable.AddCell(cell);
 
-                Chunk textChuckValorOficio = new Chunk("Acuerdo ARTF No.525/2023", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED });
+                Chunk textChuckValorOficio = new Chunk("Acuerdo ARTF No.525/2023", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK });
                 LineSeparator line = new LineSeparator(0.5f, 100, BaseColor.BLACK, Element.ALIGN_LEFT, -2);
 
                 Phrase phraseValorOficio = new Phrase();
@@ -976,11 +976,11 @@ namespace artf_MVC.Helper.Constancias
                 cell.Phrase = new Phrase(phraseValorOficio);
                 subTable.AddCell(cell);
 
-                cell.Phrase = new Phrase("Fecha de Oficio:", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED });
+                cell.Phrase = new Phrase("Fecha de Oficio:", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK });
                 subTable.AddCell(cell);
                 // Puedes agregar más celdas si es necesario
 
-                Chunk textChuckValorFecha = new Chunk("14 de abril de 2023", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.RED });
+                Chunk textChuckValorFecha = new Chunk("14 de abril de 2023", new Font(Font.FontFamily.HELVETICA, 10f) { Color = BaseColor.BLACK });
                 Phrase phraseValorFecha = new Phrase();
                 phraseValorFecha.Add(textChuckValorFecha);
                 phraseValorFecha.Add(line);
@@ -1035,7 +1035,7 @@ namespace artf_MVC.Helper.Constancias
                 cell.PaddingBottom = 5f;
                 cell.HorizontalAlignment = Element.ALIGN_LEFT;
 
-                cell.Phrase = new Phrase("Cadena Original Sello: ||2022/06/10|MAAE830222N90|CONSTANCIA DE SITUACIÓN FISCAL|200001088888800000031||\nSello Digital: cHz1639RpqknzOoNS0KEnhQjyajZrqSr6AjrecfTIAom/n8ob1Gd6tKIXxMXo3nSLGAkTD7vg0zB2jBZyk0/QOD3yJlFyIhlY9CT2rmZ+U+n6O+BX0VrqjNcDG0PIW4ChSztySI2ItQMh2rodZmusURzYfEtArCA4F3C0l6uS6A.", new Font(Font.FontFamily.HELVETICA, 8f) { Color = BaseColor.RED });
+                cell.Phrase = new Phrase("Cadena Original Sello: ||2022/06/10|MAAE830222N90|CONSTANCIA DE SITUACIÓN FISCAL|200001088888800000031||\nSello Digital: cHz1639RpqknzOoNS0KEnhQjyajZrqSr6AjrecfTIAom/n8ob1Gd6tKIXxMXo3nSLGAkTD7vg0zB2jBZyk0/QOD3yJlFyIhlY9CT2rmZ+U+n6O+BX0VrqjNcDG0PIW4ChSztySI2ItQMh2rodZmusURzYfEtArCA4F3C0l6uS6A.", new Font(Font.FontFamily.HELVETICA, 8f) { Color = BaseColor.BLACK });
                 subTable.AddCell(cell);
 
                 // Puedes agregar más celdas si es necesario
