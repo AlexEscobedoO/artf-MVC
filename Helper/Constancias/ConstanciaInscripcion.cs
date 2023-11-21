@@ -52,7 +52,7 @@ namespace artf_MVC.Helper.Constancias
                 pdfDocument.Add(headerTable);
 
                 //----------------------------------------- Crear un TITULO centrado y justificado------------------------------------------/
-                Paragraph titleParagraph = new Paragraph("CONSTANCIA DE CANCELACIÓN DE EQUIPO FERROVIARIO\nEN EL REGISTRO FERROVIARIO MEXICANO",
+                Paragraph titleParagraph = new Paragraph("CONSTANCIA DE INSCRIPCIÓN DE EQUIPO FERROVIARIO\nEN EL REGISTRO FERROVIARIO MEXICANO",
                 FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.BLACK));
                 titleParagraph.Alignment = Element.ALIGN_CENTER;
                 titleParagraph.SetLeading(10, 0); // Ajustar el espaciado entre líneas si es necesario
