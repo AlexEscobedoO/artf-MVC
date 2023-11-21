@@ -264,15 +264,27 @@ namespace artf_MVC.Helper.Constancias
 
                 pdfDocument.Close();
 
-                // Devolver el PDF como un archivo descargable
-                string filePath = "C:/Users/morga/OneDrive/Documentos/TrabajoV2/reporte.pdf";
+                //// Devolver el PDF como un archivo descargable
+                //string filePath = "C:/Users/morga/OneDrive/Documentos/TrabajoV2/reporte.pdf";
+                //System.IO.File.WriteAllBytes(filePath, pdfStream.ToArray());
+
+                //// Devolver el resultado como un FileStreamResult
+                //return new FileStreamResult(new FileStream(filePath, FileMode.Open), "application/pdf")
+                //{
+                //    FileDownloadName = $"Constancia_{insrf.Idins}.pdf"
+                //};
+
+                string fileName = $"Constancia_{insrf.Idins}.pdf";
+                string downloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+                string filePath = Path.Combine(downloadsFolder, fileName);
+
                 System.IO.File.WriteAllBytes(filePath, pdfStream.ToArray());
 
-                // Devolver el resultado como un FileStreamResult
                 return new FileStreamResult(new FileStream(filePath, FileMode.Open), "application/pdf")
                 {
-                    FileDownloadName = $"Constancia_{insrf.Idins}.pdf"
+                    FileDownloadName = fileName
                 };
+
             }
             /*************************************************************************INICIO TABLA 1*************************************************************************/
 
