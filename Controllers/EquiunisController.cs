@@ -207,7 +207,7 @@ namespace artf_MVC.Controllers
           return (_context.Equiunis?.Any(e => e.Idequi == id)).GetValueOrDefault();
         }
 
-        public async Task<IActionResult> GenerateConsistency(int? id)
+        public async Task<IActionResult> GenerateConsistency(int id)
         {
             if (id == null || _context.Insrves == null)
             {
@@ -220,13 +220,13 @@ namespace artf_MVC.Controllers
                 .Include(i => i.IduserinsNavigation)
                 .FirstOrDefaultAsync(m => m.Idins == id);
 
-            if (insrf == null)
-            {
-                return NotFound();
-            }
+            //if (insrf == null)
+            //{
+            //    return NotFound();
+            //}
 
             ConstanciaInscripcion constanciaInscripcion = new ConstanciaInscripcion();
-            var result = constanciaInscripcion.Generar(insrf);
+            var result = constanciaInscripcion.Generar(id);
 
             // Verificar si el resultado es de tipo FileContentResult o FileStreamResult
             if (result is FileContentResult fileContentResult)

@@ -9,7 +9,7 @@ namespace artf_MVC.Helper.Constancias
 {
     public class ConstanciaInscripcion
     {
-        public IActionResult Generar(Insrf insrf)
+        public IActionResult Generar(int id)
         {
             using (var pdfStream = new MemoryStream())
             {
@@ -274,7 +274,7 @@ namespace artf_MVC.Helper.Constancias
                 //    FileDownloadName = $"Constancia_{insrf.Idins}.pdf"
                 //};
 
-                string fileName = $"Constancia_{insrf.Idins}.pdf";
+                string fileName = $"Constancia_{id}.pdf";
                 string downloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
                 string filePath = Path.Combine(downloadsFolder, fileName);
 
