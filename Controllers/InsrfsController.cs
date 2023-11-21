@@ -172,38 +172,38 @@ namespace artf_MVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> GenerateConsistency(int? id)
-        {
-            if (id == null || _context.Insrves == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> GenerateConsistency(int? id)
+        //{
+        //    if (id == null || _context.Insrves == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var insrf = await _context.Insrves
-                .Include(i => i.IdempinsNavigation)
-                .Include(i => i.IdsolinsNavigation)
-                .Include(i => i.IduserinsNavigation)
-                .FirstOrDefaultAsync(m => m.Idins == id);
+        //    var insrf = await _context.Insrves
+        //        .Include(i => i.IdempinsNavigation)
+        //        .Include(i => i.IdsolinsNavigation)
+        //        .Include(i => i.IduserinsNavigation)
+        //        .FirstOrDefaultAsync(m => m.Idins == id);
 
-            if (insrf == null)
-            {
-                return NotFound();
-            }
+        //    if (insrf == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            ConstanciaInscripcion constanciaInscripcion = new ConstanciaInscripcion();
-            var result = constanciaInscripcion.Generar(insrf);
+        //    ConstanciaInscripcion constanciaInscripcion = new ConstanciaInscripcion();
+        //    var result = constanciaInscripcion.Generar(insrf);
 
-            // Verificar si el resultado es de tipo FileContentResult o FileStreamResult
-            if (result is FileContentResult fileContentResult)
-            {
-                // Puedes realizar acciones adicionales si es necesario
-            }
-            else if (result is FileStreamResult fileStreamResult)
-            {
-                // Puedes realizar acciones adicionales si es necesario
-            }
-            return result;
-        }
+        //    // Verificar si el resultado es de tipo FileContentResult o FileStreamResult
+        //    if (result is FileContentResult fileContentResult)
+        //    {
+        //        // Puedes realizar acciones adicionales si es necesario
+        //    }
+        //    else if (result is FileStreamResult fileStreamResult)
+        //    {
+        //        // Puedes realizar acciones adicionales si es necesario
+        //    }
+        //    return result;
+        //}
 
 
 
