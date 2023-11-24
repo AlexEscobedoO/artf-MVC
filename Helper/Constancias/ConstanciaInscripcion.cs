@@ -970,6 +970,7 @@ namespace artf_MVC.Helper.Constancias
             static PdfPTable CreateCustomSubTable2_2(string TipoContrato, string FechaContrato)
             {
                 FechaContrato = FechaContrato.Replace("12:00:00 a. m.", "");
+                FechaContrato = FechaContrato.Replace("00:00:00", "");
 
                 PdfPTable subTable = new PdfPTable(4);
                 float[] columnWidths = new float[] { 18f, 32f, 18f, 32f }; // Porcentajes de ancho para cada columna
@@ -1174,6 +1175,7 @@ namespace artf_MVC.Helper.Constancias
             {
 
                 Fecha = Fecha.Replace("12:00:00 a. m.", "");
+                Fecha = Fecha.Replace("00:00:00", "");
 
 
                 PdfPTable subTable = new PdfPTable(4);
@@ -1225,6 +1227,7 @@ namespace artf_MVC.Helper.Constancias
             static PdfPTable CreateCustomSubTable3_1(string fechaEquipo)
             {
                 fechaEquipo = fechaEquipo.Replace("12:00:00 a. m.", "");
+                fechaEquipo = fechaEquipo.Replace("00:00:00", "");
 
                 // Convierte la cadena a un objeto DateTime
                 DateTime fecha = DateTime.ParseExact(fechaEquipo.Trim(), "dd/MM/yyyy", null);
@@ -1257,6 +1260,7 @@ namespace artf_MVC.Helper.Constancias
             static PdfPTable CreateCustomSubTable3_2(string fechaEquipo)
             {
                 fechaEquipo = fechaEquipo.Replace("12:00:00 a. m.", "");
+                fechaEquipo = fechaEquipo.Replace("00:00:00", "");
 
                 PdfPTable subTable = new PdfPTable(1);
                 float[] columnWidths = new float[] { 100f }; // Porcentajes de ancho para cada columna
