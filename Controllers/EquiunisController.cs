@@ -207,26 +207,31 @@ namespace artf_MVC.Controllers
           return (_context.Equiunis?.Any(e => e.Idequi == id)).GetValueOrDefault();
         }
 
-        public async Task<IActionResult> GenerateConsistency(int id)
+        public async Task<IActionResult> GenerateConsistency(int Id)
         {
-            if (id == null || _context.Insrves == null)
+            if (Id == 0 || _context.Equiunis == null)
             {
                 return NotFound();
             }
 
-            var insrf = await _context.Insrves
-                .Include(i => i.IdempinsNavigation)
-                .Include(i => i.IdsolinsNavigation)
-                .Include(i => i.IduserinsNavigation)
-                .FirstOrDefaultAsync(m => m.Idins == id);
+            var equipo = await _context.Equiunis
+                .Include(i => i.IdcanequiNavigation)
+                .Include(i => i.IdmodequiNavigation)
+                .Include(i => i.IdrectequiNavigation)
+                .Include(i => i.IdinsequiNavigation)
+                .Include(i => i.IdsolequiNavigation)
+                .Include(i => i.IdempreequiNavigation)
+                .Include(i => i.IdfabequiNavigation)
+                .Include(i => i.IdmodeequiNavigation)
+                .FirstOrDefaultAsync(m => m.Idequi == Id);
 
-            //if (insrf == null)
-            //{
-            //    return NotFound();
-            //}
+            if (equipo == null)
+            {
+                return NotFound();
+            }
 
             ConstanciaInscripcion constanciaInscripcion = new ConstanciaInscripcion();
-            var result = constanciaInscripcion.Generar(id);
+            var result = constanciaInscripcion.Generar(equipo);
 
             // Verificar si el resultado es de tipo FileContentResult o FileStreamResult
             if (result is FileContentResult fileContentResult)
