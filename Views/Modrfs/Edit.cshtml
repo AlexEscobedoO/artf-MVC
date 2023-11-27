@@ -4,9 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>Modrf</h4>
+<h4>Editar modificación</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,14 +16,14 @@
                 <select asp-for="Idrectmod" class="form-control" asp-items="ViewBag.Idrectmod"></select>
                 <span asp-validation-for="Idrectmod" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="Idusermod" class="control-label"></label>
                 <select asp-for="Idusermod" class="form-control" asp-items="ViewBag.Idusermod"></select>
                 <span asp-validation-for="Idusermod" class="text-danger"></span>
-            </div>
+            </div> *@
             <div class="form-group">
                 <label asp-for="Numacuofmod" class="control-label"></label>
-                <input asp-for="Numacuofmod" class="form-control" />
+                <input asp-for="Numacuofmod" class="form-control" maxlength="30"/>
                 <span asp-validation-for="Numacuofmod" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -40,33 +38,33 @@
             </div>
             <div class="form-group">
                 <label asp-for="Desmod" class="control-label"></label>
-                <input asp-for="Desmod" class="form-control" />
+                <textarea asp-for="Desmod" class="form-control" rows="5" maxlength="200"></textarea>
                 <span asp-validation-for="Desmod" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Obsmod" class="control-label"></label>
-                <input asp-for="Obsmod" class="form-control" />
+                <textarea asp-for="Obsmod" class="form-control" rows="5" maxlength="200"></textarea>
                 <span asp-validation-for="Obsmod" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Fichatecmod" class="control-label"></label>
-                <input asp-for="Fichatecmod" class="form-control" />
+                <input type="file" asp-for="Fichatecmod" class="form-control" />
                 <span asp-validation-for="Fichatecmod" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Clavemod" class="control-label"></label>
-                <input asp-for="Clavemod" class="form-control" />
+                <input asp-for="Clavemod" class="form-control" maxlength="100" />
                 <span asp-validation-for="Clavemod" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
 </div>
 
 @section Scripts {

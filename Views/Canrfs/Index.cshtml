@@ -9,75 +9,86 @@
 <p>
     <a asp-action="Create" class="btn btn-success">Registro nuevo</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Numacuofcan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fechaofcan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Juscan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Obscan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fichacan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Clavecan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fechacan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdmodcanNavigation)
-            </th>
-            <th>
+<div style="height: 500px; overflow-y: auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Idcan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Numacuofcan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fechaofcan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Juscan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Obscan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fichacan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Clavecan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fechacan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdmodcanNavigation)
+                </th>
+                @* <th>
                 @Html.DisplayNameFor(model => model.IdusercanNavigation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numacuofcan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fechaofcan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Juscan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Obscan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fichacan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clavecan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fechacan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdmodcanNavigation.Idmod)
-            </td>
-            <td>
+                </th> *@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Idcan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numacuofcan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fechaofcan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Juscan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Obscan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fichacan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Clavecan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fechacan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdmodcanNavigation.Idmod)
+                    </td>
+                    @*   <td>
                 @Html.DisplayFor(modelItem => item.IdusercanNavigation.Iduser)
-            </td>
-            <td>
-                <a asp-action="Edit" class="btn btn-default btn-sm" asp-route-id="@item.Idcan">Editar</a> |
-                <a asp-action="Details" class="btn btn-danger btn-sm" asp-route-id="@item.Idcan">Detalles</a> |
-                <a asp-action="Delete" class="btn btn-primary btn-sm" asp-route-id="@item.Idcan">Eliminar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                </td> *@
+                    <td>
+                        <div class="btn-group-vertical">
+                        <a asp-action="Edit" class="btn btn-default btn-sm" asp-route-id="@item.Idcan">Editar</a>
+                        <a asp-action="Details" class="btn btn-danger btn-sm" asp-route-id="@item.Idcan">Detalles</a>
+                        <a asp-action="Delete" class="btn btn-primary btn-sm" asp-route-id="@item.Idcan">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -3,86 +3,107 @@
 @{
     ViewData["Title"] = "Details";
 }
-
+<div class='container' style=' text-align: justify;'>
 <div>
     <h4>Detalles de la rectificación</h4>
-    <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Numacuofrect)
+        <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Numacuofrect)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Numacuofrect)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fichatecrect)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fichatecrect)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Numdocemp)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Numdocemp)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fechadocsol)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fechadocsol)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fecharect)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fecharect)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Desrect)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Desrect)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Obsrect)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Obsrect)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Acurect)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Acurect)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Claverect)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Claverect)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fechamodrect)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fechamodrect)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdinsrectNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdinsrectNavigation.Idins)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IduserrectNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IduserrectNavigation.Iduser)
+        <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Numacuofrect)
         </dd>
     </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Fichatecrect)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Fichatecrect)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Numdocemp)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Numdocemp)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Fechadocsol)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Fechadocsol)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Fecharect)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Fecharect)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Desrect)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Desrect)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Obsrect)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Obsrect)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Acurect)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Acurect)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Claverect)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Claverect)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Fechamodrect)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Fechamodrect)
+            </dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdinsrectNavigation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdinsrectNavigation.Idins)
+            </dd>
+        </dl>
+       @*  <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IduserrectNavigation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IduserrectNavigation.Iduser)
+            </dd>
+        </dl> *@
+</div>
 </div>
 <div>
-    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model?.Idrect">Editar</a> |
     <a asp-action="Index" class="btn btn-info">Volver a la lista</a>
 </div>
