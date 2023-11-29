@@ -223,7 +223,7 @@ namespace artf_MVC.Controllers
                 .Include(i => i.IdempreequiNavigation)
                 .Include(i => i.IdfabequiNavigation)
                 .Include(i => i.IdmodeequiNavigation)
-                .FirstOrDefaultAsync(m => m.Idequi == Id);
+                .FirstOrDefaultAsync(m => m.IdinsequiNavigation.Idins == Id);
 
             if (equipo == null)
             {

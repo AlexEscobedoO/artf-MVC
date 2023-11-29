@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using artf_MVC.Models;
+using artf_MVC.Helper.Constancias;
 
 namespace artf_MVC.Controllers
 {
@@ -169,5 +170,48 @@ namespace artf_MVC.Controllers
         {
           return (_context.Canrves?.Any(e => e.Idcan == id)).GetValueOrDefault();
         }
+
+        public async Task<IActionResult> GenerateConsistencyCancelation(int Id)
+        {
+            if (Id == 0 || _context.Canrves == null)
+            {
+                return NotFound();
+            }
+
+
+            var equipo = await _context.Equiunis
+               .Include(i => i.IdcanequiNavigation)
+               .Include(i => i.IdmodequiNavigation)
+               .Include(i => i.IdrectequiNavigation)
+               .Include(i => i.IdinsequiNavigation)
+               .Include(i => i.IdsolequiNavigation)
+               .Include(i => i.IdempreequiNavigation)
+               .Include(i => i.IdfabequiNavigation)
+               .Include(i => i.IdmodeequiNavigation)
+               .FirstOrDefaultAsync(m => m.IdcanequiNavigation.Idcan == Id);
+
+
+
+
+            if (equipo == null)
+            {
+                return NotFound();
+            }
+
+            ConstanciaCancelacion constanciaInscripcion = new ConstanciaCancelacion();
+            var result = constanciaInscripcion.Generar(equipo);
+
+            // Verificar si el resultado es de tipo FileContentResult o FileStreamResult
+            if (result is FileContentResult fileContentResult)
+            {
+                // Puedes realizar acciones adicionales si es necesario
+            }
+            else if (result is FileStreamResult fileStreamResult)
+            {
+                // Puedes realizar acciones adicionales si es necesario
+            }
+            return result;
+        }
+
     }
 }

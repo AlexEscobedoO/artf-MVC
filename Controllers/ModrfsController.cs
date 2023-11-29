@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using artf_MVC.Models;
+using artf_MVC.Helper.Constancias;
 
 namespace artf_MVC.Controllers
 {
@@ -177,6 +178,44 @@ namespace artf_MVC.Controllers
         private bool ModrfExists(int id)
         {
           return (_context.Modrves?.Any(e => e.Idmod == id)).GetValueOrDefault();
+        }
+
+        public async Task<IActionResult> GenerateConsistencyModification(int Id, string Text)
+        {
+            if (Id == 0 || _context.Equiunis == null)
+            {
+                return NotFound();
+            }
+
+            var equipo = await _context.Equiunis
+                .Include(i => i.IdcanequiNavigation)
+                .Include(i => i.IdmodequiNavigation)
+                .Include(i => i.IdrectequiNavigation)
+                .Include(i => i.IdinsequiNavigation)
+                .Include(i => i.IdsolequiNavigation)
+                .Include(i => i.IdempreequiNavigation)
+                .Include(i => i.IdfabequiNavigation)
+                .Include(i => i.IdmodeequiNavigation)
+                .FirstOrDefaultAsync(m => m.IdmodequiNavigation.Idmod == Id);
+
+            if (equipo == null)
+            {
+                return NotFound();
+            }
+
+            CostanciaModificacion_o_Rectificacion constanciaInscripcion = new CostanciaModificacion_o_Rectificacion();
+            var result = constanciaInscripcion.Generar(equipo, Text);
+
+            // Verificar si el resultado es de tipo FileContentResult o FileStreamResult
+            if (result is FileContentResult fileContentResult)
+            {
+                // Puedes realizar acciones adicionales si es necesario
+            }
+            else if (result is FileStreamResult fileStreamResult)
+            {
+                // Puedes realizar acciones adicionales si es necesario
+            }
+            return result;
         }
     }
 }
