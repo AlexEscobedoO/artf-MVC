@@ -1019,6 +1019,8 @@ namespace artf_MVC.Helper.Constancias
             {
                 FechaContrato = FechaContrato.Replace("12:00:00 a. m.", "");
                 FechaContrato = FechaContrato.Replace("00:00:00", "");
+                FechaContrato = FechaContrato.Replace("12:00:00 AM", "");
+
 
                 PdfPTable subTable = new PdfPTable(4);
                 float[] columnWidths = new float[] { 18f, 32f, 18f, 32f }; // Porcentajes de ancho para cada columna
@@ -1237,6 +1239,7 @@ namespace artf_MVC.Helper.Constancias
             {
                 fechaDocumento = fechaDocumento.Replace("12:00:00 a. m.", "");
                 fechaDocumento = fechaDocumento.Replace("00:00:00", "");
+                fechaDocumento = fechaDocumento.Replace("12:00:00 AM", "");
 
 
 
@@ -1387,6 +1390,7 @@ namespace artf_MVC.Helper.Constancias
             {
                 FechaOficio = FechaOficio.Replace("12:00:00 a. m.", "");
                 FechaOficio = FechaOficio.Replace("00:00:00", "");
+                FechaOficio = FechaOficio.Replace("12:00:00 AM", "");
 
 
 

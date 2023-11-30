@@ -971,6 +971,7 @@ namespace artf_MVC.Helper.Constancias
             {
                 FechaContrato = FechaContrato.Replace("12:00:00 a. m.", "");
                 FechaContrato = FechaContrato.Replace("00:00:00", "");
+                FechaContrato = FechaContrato.Replace("12:00:00 AM", "");
 
                 PdfPTable subTable = new PdfPTable(4);
                 float[] columnWidths = new float[] { 18f, 32f, 18f, 32f }; // Porcentajes de ancho para cada columna
@@ -1176,6 +1177,7 @@ namespace artf_MVC.Helper.Constancias
 
                 Fecha = Fecha.Replace("12:00:00 a. m.", "");
                 Fecha = Fecha.Replace("00:00:00", "");
+                Fecha = Fecha.Replace("12:00:00 AM", "");
 
 
                 PdfPTable subTable = new PdfPTable(4);
@@ -1228,12 +1230,14 @@ namespace artf_MVC.Helper.Constancias
             {
                 fechaEquipo = fechaEquipo.Replace("12:00:00 a. m.", "");
                 fechaEquipo = fechaEquipo.Replace("00:00:00", "");
+                fechaEquipo = fechaEquipo.Replace("12:00:00 AM", "");
+
 
                 // Convierte la cadena a un objeto DateTime
-                DateTime fecha = DateTime.ParseExact(fechaEquipo.Trim(), "dd/MM/yyyy", null);
+              //  DateTime fecha = DateTime.ParseExact(fechaEquipo.Trim(), "dd/MM/yyyy", null);
 
                 // Formatea la fecha según tus preferencias
-                string fechaFormateada = fecha.ToString("dd 'de' MMMM 'de' yyyy");
+             //   string fechaFormateada = fecha.ToString("dd 'de' MMMM 'de' yyyy");
 
 
                 PdfPTable subTable = new PdfPTable(1);
@@ -1251,7 +1255,7 @@ namespace artf_MVC.Helper.Constancias
                 cell.PaddingBottom = 5f;                
                 cell.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
 
-                cell.Phrase = new Phrase($"Con folio No. RFMETCOIN543 se hace constar que con fecha {fechaFormateada} queda inscrito el Equipo descrito en el presente documento y sus especificaciones técnicas mostradas al reverso en el Registro Ferroviario Mexicano de conformidad a lo estipulado en el artículo 204, fracción III del Reglamento del Servicio Ferroviario.", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                cell.Phrase = new Phrase($"Con folio No. RFMETCOIN543 se hace constar que con fecha {fechaEquipo} queda inscrito el Equipo descrito en el presente documento y sus especificaciones técnicas mostradas al reverso en el Registro Ferroviario Mexicano de conformidad a lo estipulado en el artículo 204, fracción III del Reglamento del Servicio Ferroviario.", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
                 subTable.AddCell(cell);
 
                 return subTable;
@@ -1261,6 +1265,8 @@ namespace artf_MVC.Helper.Constancias
             {
                 fechaEquipo = fechaEquipo.Replace("12:00:00 a. m.", "");
                 fechaEquipo = fechaEquipo.Replace("00:00:00", "");
+                fechaEquipo = fechaEquipo.Replace("12:00:00 AM", "");
+
 
                 PdfPTable subTable = new PdfPTable(1);
                 float[] columnWidths = new float[] { 100f }; // Porcentajes de ancho para cada columna
