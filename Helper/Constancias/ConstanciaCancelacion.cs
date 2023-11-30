@@ -174,7 +174,7 @@ namespace artf_MVC.Helper.Constancias
                 table2.AddCell(cell3Table2);
 
                 // ROW (CONTRATO, FECHA CONTRATO)
-                PdfPCell cell4Table2 = new PdfPCell(CreateCustomSubTable2_2(equiuni.Tcontra, equiuni.Fcontra.Value.Date.ToString()));
+                PdfPCell cell4Table2 = new PdfPCell(CreateCustomSubTable2_2(equiuni.Nofact, equiuni.Fecharequi.Value.Date.ToString()));
                 cell4Table2.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER; // Quital el borde izquierdo y derecho
                 table2.AddCell(cell4Table2);
 
@@ -193,16 +193,6 @@ namespace artf_MVC.Helper.Constancias
                 cell7Table2.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER; // Quital el borde izquierdo y derecho
                 table2.AddCell(cell7Table2);
 
-                // ROW (OBSERVACIONES)
-                PdfPCell cell8Table2 = new PdfPCell(CreateCustomSubTable2_6(equiuni.IdinsequiNavigation.Obsins));
-                cell8Table2.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER; // Quital el borde izquierdo y derecho
-                table2.AddCell(cell8Table2);
-
-                // ROW (NO OFICIO Y FECHA OFICIO)
-                PdfPCell cell9Table2 = new PdfPCell(CreateCustomSubTable2_7(equiuni.IdinsequiNavigation.Numacuofins, equiuni.IdinsequiNavigation.Fecapins.ToString()));
-                cell9Table2.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER | Rectangle.BOTTOM_BORDER; // Quital el borde izquierdo y derecho
-                table2.AddCell(cell9Table2);
-
                 // Añadir la tabla al documento
                 pdfDocument.Add(table2);
 
@@ -220,7 +210,7 @@ namespace artf_MVC.Helper.Constancias
                 table3.WidthPercentage = 100;
 
                 // Añadir celda de título
-                PdfPCell titleCellTable3 = new PdfPCell(new Phrase("DATOS DEL REGISTRO FERROVIARIO MEXICANO"));
+                PdfPCell titleCellTable3 = new PdfPCell(new Phrase($"DATOS DE LA CANCELACIÓN EN EL REGISTRO FERROVIARIO MEXICANO"));
                 titleCellTable3.Colspan = 4; // Ocupa todas las columnas
                 titleCellTable3.BackgroundColor = new BaseColor(192, 192, 192); // Fondo gris
                 titleCellTable3.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar el texto
@@ -235,22 +225,80 @@ namespace artf_MVC.Helper.Constancias
 
 
 
-                // ROW (CON FOLIO)
-                PdfPCell cell1Table3 = new PdfPCell(CreateCustomSubTable3_1(equiuni.Fecharequi.ToString()));
+                // ROW (TIPO DE ASIENTO)
+                PdfPCell cell1Table3 = new PdfPCell(CreateCustomSubTable3_1("Cancelación"));
                 cell1Table3.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER; // Quital el borde izquierdo y derecho
                 table3.AddCell(cell1Table3);
-                // ROW (SELLO DIGITAL)
-                PdfPCell cell2Table3 = new PdfPCell(CreateCustomSubTable3_2(equiuni.Fecharequi.ToString()));
+
+
+                // ROW (DOCUMENTO, FECHA DEL DOCUMENTO)
+                PdfPCell cell2Table3 = new PdfPCell(CreateCustomSubTable3_2("Convenio Número F/166943-7", equiuni.IdcanequiNavigation.Fechacan.ToString()));
                 cell2Table3.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER; // Quital el borde izquierdo y derecho
                 table3.AddCell(cell2Table3);
-                // ROW (RFM)
-                PdfPCell cell3Table3 = new PdfPCell(CreateCustomSubTable3_3());
-                cell3Table3.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER | Rectangle.BOTTOM_BORDER; // Quital el borde izquierdo y derecho
+
+
+                // ROW (JUSTIFICACION)
+                PdfPCell cell3Table3 = new PdfPCell(CreateCustomSubTable3_3(equiuni.IdcanequiNavigation.Juscan));
+                cell3Table3.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;// Quital el borde izquierdo y derecho
                 table3.AddCell(cell3Table3);
+
+                // ROW (OBSERVACIONES)
+                PdfPCell cell4Table3 = new PdfPCell(CreateCustomSubTable3_4(equiuni.IdcanequiNavigation.Obscan));
+                cell4Table3.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;// Quital el borde izquierdo y derecho
+                table3.AddCell(cell4Table3);
+
+                // ROW (No.OFICIO, FECHA DE OFICIO)
+                PdfPCell cell5Table3 = new PdfPCell(CreateCustomSubTable3_5(equiuni.IdcanequiNavigation.Idcan.ToString(), equiuni.IdcanequiNavigation.Fechaofcan.ToString()));
+                cell5Table3.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER; // Quital el borde izquierdo y derecho
+                table3.AddCell(cell5Table3);
+                //PdfPCell cell3Table4 = new PdfPCell(CreateCustomSubTable3_3());
+                //cell3Table4.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER | Rectangle.BOTTOM_BORDER; // Quital el borde izquierdo y derecho
+                //table3.AddCell(cell3Table4);
 
 
                 // Añadir la tabla al documento
                 pdfDocument.Add(table3);
+                /////////////////////////////////////////////////////FIN TABLA 3 ////////////////////////////////////////////////////////////////////////////////////
+                // Crear la tabla 4
+                PdfPTable table4 = new PdfPTable(1); // Número de columnas, ajusta según tus necesidades
+
+                // Configurar el borde de la tabla principal
+                table4.DefaultCell.BorderWidthBottom = 1f;
+                table4.DefaultCell.BorderWidthTop = 1f;
+                table4.DefaultCell.BorderWidthLeft = 1f;
+                table4.DefaultCell.BorderWidthRight = 1f;
+
+                // Ajustar el ancho de la tabla al 100% del ancho de la página
+                table4.WidthPercentage = 100;
+
+                // Añadir celda de título
+                PdfPCell titleCellTable4 = new PdfPCell(new Phrase($"   "));
+                titleCellTable4.Colspan = 4; // Ocupa todas las columnas
+                titleCellTable4.BackgroundColor = new BaseColor(192, 192, 192); // Fondo gris
+                titleCellTable4.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar el texto
+                table4.AddCell(titleCellTable4);
+
+                // Agregar una fila vacía para simular el espacio entre el encabezado y la celda
+                float espacioEntreEncabezadoYCellTable4 = 9f; // Ajusta según sea necesario
+                PdfPCell emptyCellTable4 = new PdfPCell(new Phrase(""));
+                emptyCellTable4.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER; // Quital el borde izquierdo y derecho
+                emptyCellTable4.FixedHeight = espacioEntreEncabezadoYCellTable4;
+                table4.AddCell(emptyCellTable4);
+
+                // ROW (RESTANTE)
+                PdfPCell cell1Table4 = new PdfPCell(CreateCustomSubTable4_1());
+                cell1Table4.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER; // Quital el borde izquierdo y derecho
+                table4.AddCell(cell1Table4);
+
+                // ROW (RFM)
+                PdfPCell cell2Table4 = new PdfPCell(CreateCustomSubTable4_2());
+                cell2Table4.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER | Rectangle.BOTTOM_BORDER; // Quital el borde izquierdo y derecho
+                table4.AddCell(cell2Table4);
+
+
+                // Añadir la tabla al documento
+                pdfDocument.Add(table4);
+
 
                 /**--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -967,7 +1015,7 @@ namespace artf_MVC.Helper.Constancias
                 return subTable;
             }
             // Función para crear subtabla personalizada en la tabla 2 (Contrato y fecha de contrato)
-            static PdfPTable CreateCustomSubTable2_2(string TipoContrato, string FechaContrato)
+            static PdfPTable CreateCustomSubTable2_2(string Contrato, string FechaContrato)
             {
                 FechaContrato = FechaContrato.Replace("12:00:00 a. m.", "");
                 FechaContrato = FechaContrato.Replace("00:00:00", "");
@@ -990,11 +1038,11 @@ namespace artf_MVC.Helper.Constancias
                 cell.HorizontalAlignment = Element.ALIGN_LEFT;
 
 
-                cell.Phrase = new Phrase("Contrato", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                cell.Phrase = new Phrase("Contrato:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
                 subTable.AddCell(cell);
 
 
-                Chunk textChuckValorContrato = new Chunk(TipoContrato, new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                Chunk textChuckValorContrato = new Chunk(Contrato, new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
                 LineSeparator line = new LineSeparator(0.5f, 100, BaseColor.BLACK, Element.ALIGN_LEFT, -2);
 
                 Phrase phraseValorContrato = new Phrase();
@@ -1129,53 +1177,16 @@ namespace artf_MVC.Helper.Constancias
                 subTable.AddCell(cell);
 
                 // Puedes agregar más celdas si es necesario
-
+                subTable.SpacingAfter = 9f;
                 return subTable;
 
 
             }
-            // Función para crear subtabla personalizada en la tabla 2 (Observaciones)
-            static PdfPTable CreateCustomSubTable2_6(string ObservacionesInscripcion)
+            /*************************************************************************FIN TABLA 2*************************************************************************/
+            /*************************************************************************INICIO TABLA 3*************************************************************************/
+            /*************************************************************************FIN TABLA 3*************************************************************************/
+            static PdfPTable CreateCustomSubTable3_1(string Asiento)
             {
-                PdfPTable subTable = new PdfPTable(2);
-                float[] columnWidths = new float[] { 18f, 82f }; // Porcentajes de ancho para cada columna
-
-                // Establecer los anchos de las columnas
-                subTable.SetWidths(columnWidths);
-
-                PdfPCell cell = new PdfPCell();
-
-                cell.Border = Rectangle.NO_BORDER; // Quita el borde
-                cell.PaddingLeft = 9f;
-                cell.PaddingRight = 9f;
-                cell.PaddingTop = 5f;
-                cell.PaddingBottom = 5f;
-                cell.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
-
-                cell.Phrase = new Phrase("Observaciones:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
-                subTable.AddCell(cell);
-
-                Chunk textChuck = new Chunk(ObservacionesInscripcion, new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
-                LineSeparator line = new LineSeparator(0.5f, 100, BaseColor.BLACK, Element.ALIGN_LEFT, -2);
-
-                Phrase phrase = new Phrase();
-                phrase.Add(textChuck);
-                phrase.Add(line);
-
-                cell.Phrase = new Phrase(phrase);
-                subTable.AddCell(cell);
-
-                // Puedes agregar más celdas si es necesario
-
-                return subTable;
-
-            }
-            // Función para crear subtabla personalizada en la tabla 2 (No de oficio y Fecha oficio)
-            static PdfPTable CreateCustomSubTable2_7(string noOficio, string Fecha)
-            {
-
-                Fecha = Fecha.Replace("12:00:00 a. m.", "");
-                Fecha = Fecha.Replace("00:00:00", "");
 
 
                 PdfPTable subTable = new PdfPTable(4);
@@ -1193,48 +1204,239 @@ namespace artf_MVC.Helper.Constancias
                 cell.PaddingBottom = 5f;
                 cell.HorizontalAlignment = Element.ALIGN_LEFT;
 
-                cell.Phrase = new Phrase("No. de Oficio:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+
+                cell.Phrase = new Phrase("Tipo de\nAsiento:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
                 subTable.AddCell(cell);
 
-                Chunk textChuckValorOficio = new Chunk(noOficio, new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+
+                Chunk textChuckValorMatricula = new Chunk(Asiento, new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
                 LineSeparator line = new LineSeparator(0.5f, 100, BaseColor.BLACK, Element.ALIGN_LEFT, -2);
 
-                Phrase phraseValorOficio = new Phrase();
-                phraseValorOficio.Add(textChuckValorOficio);
-                phraseValorOficio.Add(line);
-                cell.Phrase = new Phrase(phraseValorOficio);
+                Phrase phraseValorMatricula = new Phrase();
+                phraseValorMatricula.Add(textChuckValorMatricula);
+                phraseValorMatricula.Add(line);
+                cell.Phrase = new Phrase(phraseValorMatricula);
                 subTable.AddCell(cell);
 
-                cell.Phrase = new Phrase("Fecha de Oficio:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+
+                cell.Phrase = new Phrase($"", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.WHITE });
                 subTable.AddCell(cell);
                 // Puedes agregar más celdas si es necesario
 
-                Chunk textChuckValorFecha = new Chunk(Fecha, new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                Chunk textChuckValorFecha = new Chunk("", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.WHITE });
+                Phrase phraseValorFecha = new Phrase();
+                phraseValorFecha.Add(textChuckValorFecha);
+                //phraseValorFecha.Add(line);
+                cell.Phrase = new Phrase(phraseValorFecha);
+                subTable.AddCell(cell);
+
+                return subTable;
+            }
+
+            static PdfPTable CreateCustomSubTable3_2(string Documento, string fechaDocumento)
+            {
+                fechaDocumento = fechaDocumento.Replace("12:00:00 a. m.", "");
+                fechaDocumento = fechaDocumento.Replace("00:00:00", "");
+
+
+
+                PdfPTable subTable = new PdfPTable(4);
+                float[] columnWidths = new float[] { 18f, 32f, 18f, 32f }; // Porcentajes de ancho para cada columna
+
+                // Establecer los anchos de las columnas
+                subTable.SetWidths(columnWidths);
+
+                PdfPCell cell = new PdfPCell();
+
+                cell.Border = Rectangle.NO_BORDER; // Quita el borde
+                cell.PaddingLeft = 9f;
+                cell.PaddingRight = 9f;
+                cell.PaddingTop = 5f;
+                cell.PaddingBottom = 5f;
+                cell.HorizontalAlignment = Element.ALIGN_LEFT;
+
+
+                cell.Phrase = new Phrase("Documento:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                subTable.AddCell(cell);
+
+
+                Chunk textChuckValorMatricula = new Chunk(Documento, new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                LineSeparator line = new LineSeparator(0.5f, 100, BaseColor.BLACK, Element.ALIGN_LEFT, -2);
+
+                Phrase phraseValorMatricula = new Phrase();
+                phraseValorMatricula.Add(textChuckValorMatricula);
+                phraseValorMatricula.Add(line);
+                cell.Phrase = new Phrase(phraseValorMatricula);
+                subTable.AddCell(cell);
+
+
+                cell.Phrase = new Phrase($"Fecha del\nDocumento:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                subTable.AddCell(cell);
+                // Puedes agregar más celdas si es necesario
+
+                Chunk textChuckValorFecha = new Chunk(fechaDocumento.ToString(), new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
                 Phrase phraseValorFecha = new Phrase();
                 phraseValorFecha.Add(textChuckValorFecha);
                 phraseValorFecha.Add(line);
                 cell.Phrase = new Phrase(phraseValorFecha);
                 subTable.AddCell(cell);
-                // Agregar un salto de línea
-                // Puedes ajustar el valor de SpacingAfter según tus necesidades para controlar el espacio después de la celda.
-                subTable.SpacingAfter = 9f;
+
                 return subTable;
 
             }
-            /*************************************************************************FIN TABLA 2*************************************************************************/
-            /*************************************************************************INICIO TABLA 3*************************************************************************/
-            /*************************************************************************FIN TABLA 3*************************************************************************/
-            static PdfPTable CreateCustomSubTable3_1(string fechaEquipo)
+            static PdfPTable CreateCustomSubTable3_3(string Justificacion)
             {
-                fechaEquipo = fechaEquipo.Replace("12:00:00 a. m.", "");
-                fechaEquipo = fechaEquipo.Replace("00:00:00", "");
+                
 
-                // Convierte la cadena a un objeto DateTime
-                DateTime fecha = DateTime.ParseExact(fechaEquipo.Trim(), "dd/MM/yyyy", null);
+                PdfPTable subTable = new PdfPTable(2);
+                float[] columnWidths = new float[] { 18f, 82f }; // Porcentajes de ancho para cada columna
 
-                // Formatea la fecha según tus preferencias
-                string fechaFormateada = fecha.ToString("dd 'de' MMMM 'de' yyyy");
+                // Establecer los anchos de las columnas
+                subTable.SetWidths(columnWidths);
 
+
+                PdfPCell cell = new PdfPCell();
+
+                cell.Border = Rectangle.NO_BORDER; // Quita el borde
+                cell.PaddingLeft = 9f;
+                cell.PaddingRight = 9f;
+                cell.PaddingTop = 5f;
+                cell.PaddingBottom = 5f;
+                cell.HorizontalAlignment = Element.ALIGN_LEFT;
+
+
+                cell.Phrase = new Phrase($"Justificación:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                subTable.AddCell(cell);
+
+
+                Chunk textChuck = new Chunk(Justificacion, new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                LineSeparator line = new LineSeparator(0.5f, 100, BaseColor.BLACK, Element.ALIGN_LEFT, -2);
+
+                Phrase phrase = new Phrase();
+                phrase.Add(textChuck);
+                phrase.Add(line);
+
+                cell.Phrase = new Phrase(phrase);
+
+                subTable.AddCell(cell);
+
+
+                // Puedes agregar más celdas si es necesario
+
+                return subTable;
+
+
+
+            }
+            static PdfPTable CreateCustomSubTable3_4(string Observaciones)
+            {
+
+                PdfPTable subTable = new PdfPTable(2);
+                float[] columnWidths = new float[] { 18f, 82f }; // Porcentajes de ancho para cada columna
+
+                // Establecer los anchos de las columnas
+                subTable.SetWidths(columnWidths);
+
+
+                PdfPCell cell = new PdfPCell();
+
+                cell.Border = Rectangle.NO_BORDER; // Quita el borde
+                cell.PaddingLeft = 9f;
+                cell.PaddingRight = 9f;
+                cell.PaddingTop = 5f;
+                cell.PaddingBottom = 5f;
+                cell.HorizontalAlignment = Element.ALIGN_LEFT;
+
+
+                cell.Phrase = new Phrase($"Observaciones:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                subTable.AddCell(cell);
+
+
+                Chunk textChuck = new Chunk(Observaciones, new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                LineSeparator line = new LineSeparator(0.5f, 100, BaseColor.BLACK, Element.ALIGN_LEFT, -2);
+
+                Phrase phrase = new Phrase();
+                phrase.Add(textChuck);
+                phrase.Add(line);
+
+                cell.Phrase = new Phrase(phrase);
+
+                subTable.AddCell(cell);
+
+                // Puedes agregar más celdas si es necesario
+
+                return subTable;
+            }
+            static string GenerateSelloDigital(int length)
+            {
+                // Caracteres que puedes incluir en tu string
+                string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+.";
+
+                // Genera un string aleatorio de la misma longitud
+                StringBuilder result = new StringBuilder();
+                Random random = new Random();
+
+                for (int i = 0; i < length; i++)
+                {
+                    result.Append(characters[random.Next(characters.Length)]);
+                }
+
+                return result.ToString();
+            }
+            static PdfPTable CreateCustomSubTable3_5(string NoOficio, string FechaOficio)
+            {
+                FechaOficio = FechaOficio.Replace("12:00:00 a. m.", "");
+                FechaOficio = FechaOficio.Replace("00:00:00", "");
+
+
+
+                PdfPTable subTable = new PdfPTable(4);
+                float[] columnWidths = new float[] { 18f, 32f, 18f, 32f }; // Porcentajes de ancho para cada columna
+
+                // Establecer los anchos de las columnas
+                subTable.SetWidths(columnWidths);
+
+                PdfPCell cell = new PdfPCell();
+
+                cell.Border = Rectangle.NO_BORDER; // Quita el borde
+                cell.PaddingLeft = 9f;
+                cell.PaddingRight = 9f;
+                cell.PaddingTop = 5f;
+                cell.PaddingBottom = 5f;
+                cell.HorizontalAlignment = Element.ALIGN_LEFT;
+
+
+                cell.Phrase = new Phrase("No. de Oficio:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                subTable.AddCell(cell);
+
+
+                Chunk textChuckValorMatricula = new Chunk(NoOficio, new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                LineSeparator line = new LineSeparator(0.5f, 100, BaseColor.BLACK, Element.ALIGN_LEFT, -2);
+
+                Phrase phraseValorMatricula = new Phrase();
+                phraseValorMatricula.Add(textChuckValorMatricula);
+                phraseValorMatricula.Add(line);
+                cell.Phrase = new Phrase(phraseValorMatricula);
+                subTable.AddCell(cell);
+
+
+                cell.Phrase = new Phrase($"Fecha del\nOficio:", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                subTable.AddCell(cell);
+                // Puedes agregar más celdas si es necesario
+
+                Chunk textChuckValorFecha = new Chunk(FechaOficio.ToString(), new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                Phrase phraseValorFecha = new Phrase();
+                phraseValorFecha.Add(textChuckValorFecha);
+                phraseValorFecha.Add(line);
+                cell.Phrase = new Phrase(phraseValorFecha);
+                subTable.AddCell(cell);
+
+                subTable.SpacingAfter = 9f;
+                return subTable;
+            }
+            static PdfPTable CreateCustomSubTable4_1()
+            {
+                
 
                 PdfPTable subTable = new PdfPTable(1);
                 float[] columnWidths = new float[] { 100f }; // Porcentajes de ancho para cada columna
@@ -1251,45 +1453,12 @@ namespace artf_MVC.Helper.Constancias
                 cell.PaddingBottom = 5f;
                 cell.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
 
-                cell.Phrase = new Phrase($"Con folio No. RFMETCOIN543 se hace constar que con fecha {fechaFormateada} queda inscrito el Equipo descrito en el presente documento y sus especificaciones técnicas mostradas al reverso en el Registro Ferroviario Mexicano de conformidad a lo estipulado en el artículo 204, fracción III del Reglamento del Servicio Ferroviario.", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
+                cell.Phrase = new Phrase("Con folio No. RFMEACOIN-023-MD001-CA se hace constar que con fecha 19 de abril de 2022 queda CANCELADO el Equipo Ferroviario descrito en el presente documento, del Registro Ferroviario Mexicano de conformidad a lo estipulado en el artículo 209, fracción III, del Reglamento del Servicio Ferroviario.", new Font(Font.FontFamily.HELVETICA, 9f) { Color = BaseColor.BLACK });
                 subTable.AddCell(cell);
 
                 return subTable;
             }
-
-            static PdfPTable CreateCustomSubTable3_2(string fechaEquipo)
-            {
-                fechaEquipo = fechaEquipo.Replace("12:00:00 a. m.", "");
-                fechaEquipo = fechaEquipo.Replace("00:00:00", "");
-
-                PdfPTable subTable = new PdfPTable(1);
-                float[] columnWidths = new float[] { 100f }; // Porcentajes de ancho para cada columna
-
-                // Establecer los anchos de las columnas
-                subTable.SetWidths(columnWidths);
-
-                PdfPCell cell = new PdfPCell();
-
-                cell.Border = Rectangle.NO_BORDER; // Quita el borde
-                cell.PaddingLeft = 9f;
-                cell.PaddingRight = 9f;
-                cell.PaddingTop = 5f;
-                cell.PaddingBottom = 5f;
-                cell.HorizontalAlignment = Element.ALIGN_LEFT;
-
-                string generatedString = GenerateSelloDigital(144);
-                string sello = GenerateCadenaSello(13);
-                string constanciaSituacionFiscal = GenerateConstanciaSituacionFiscal(21);
-
-                cell.Phrase = new Phrase($"Cadena Original Sello: ||{fechaEquipo}|{sello}|CONSTANCIA DE SITUACIÓN FISCAL|{constanciaSituacionFiscal}||\nSello Digital: {generatedString}", new Font(Font.FontFamily.HELVETICA, 8f) { Color = BaseColor.BLACK });
-                subTable.AddCell(cell);
-
-                // Puedes agregar más celdas si es necesario
-
-                return subTable;
-
-            }
-            static PdfPTable CreateCustomSubTable3_3()
+            static PdfPTable CreateCustomSubTable4_2()
             {
                 PdfPTable subTable = new PdfPTable(1);
                 float[] columnWidths = new float[] { 100f }; // Porcentajes de ancho para cada columna
@@ -1313,22 +1482,6 @@ namespace artf_MVC.Helper.Constancias
 
                 return subTable;
 
-            }
-            static string GenerateSelloDigital(int length)
-            {
-                // Caracteres que puedes incluir en tu string
-                string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+.";
-
-                // Genera un string aleatorio de la misma longitud
-                StringBuilder result = new StringBuilder();
-                Random random = new Random();
-
-                for (int i = 0; i < length; i++)
-                {
-                    result.Append(characters[random.Next(characters.Length)]);
-                }
-
-                return result.ToString();
             }
             static string GenerateCadenaSello(int length)
             {
@@ -1363,6 +1516,6 @@ namespace artf_MVC.Helper.Constancias
                 return result.ToString();
             }
         }
-
     }
 }
+
